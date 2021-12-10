@@ -40,3 +40,5 @@ pip-log.txt
 # Jetbrains Pycharm
 .idea
 venv
+
+*.DS_Store
