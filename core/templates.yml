@@ -224,27 +224,27 @@ paths:
         definition: '@shot_root/publish/nuke'
     # The location of WIP script files
     nuke_shot_work:
-        definition: '@shot_root/work/nuke/{name}.v{version}.nk'
+        definition: '@shot_root/work/nuke/{Shot}.v{version}.nk'
     # The location of backups of WIP files
     nuke_shot_snapshot:
-        definition: '@shot_root/work/nuke/snapshots/{name}.v{version}.{timestamp}.nk'
+        definition: '@shot_root/work/nuke/snapshots/{Shot}.v{version}.{timestamp}.nk'
     # The location of published nuke script files
     nuke_shot_publish:
-        definition: '@shot_root/publish/nuke/{name}.v{version}.nk'
+        definition: '@shot_root/publish/nuke/{Shot}.v{version}.nk'
     # write node outputs
     nuke_shot_render_mono_dpx:
-        definition: '@shot_root/work/images/{name}/v{version}/{width}x{height}/{Shot}_{name}_{nuke.output}_v{version}.{SEQ}.dpx'
+        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{SEQ}.dpx'
     nuke_shot_render_pub_mono_dpx:
-        definition: '@shot_root/publish/elements/{name}/v{version}/{width}x{height}/{Shot}_{name}_{nuke.output}_v{version}.{SEQ}.dpx'
+        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{SEQ}.dpx'
     nuke_shot_render_stereo:
-        definition: '@shot_root/work/images/{name}/v{version}/{width}x{height}/{Shot}_{name}_{nuke.output}_{eye}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{eye}.{SEQ}.dpx'
     nuke_shot_render_pub_stereo:
-        definition: '@shot_root/publish/elements/{name}/v{version}/{width}x{height}/{Shot}_{name}_{nuke.output}_{eye}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{eye}.{SEQ}.dpx'
     # review output
     shot_quicktime_quick:
-        definition: '@shot_root/review/quickdaily/{Shot}_{name}_{iteration}.mov'
+        definition: '@shot_root/review/quickdaily/{Shot}_{iteration}.mov'
     nuke_shot_render_movie:
-        definition: '@shot_root/review/{Shot}_{name}_{nuke.output}_v{version}.mov'
+        definition: '@shot_root/review/{Shot}_{nuke.output}_v{version}.mov'
 
     #
     # Hiero
@@ -252,9 +252,9 @@ paths:
 
     # export of shot asset data from hiero
     hiero_plate_path:
-        definition: '@shot_root/editorial/{YYYY}_{MM}_{DD}/plates/{project}_{Shot}.{SEQ}.dpx'
+        definition: '@shot_root/editorial/plates/v{version}/{project}_{Shot}.{SEQ}.dpx'
     hiero_render_path:
-        definition: '@shot_root/editorial/{YYYY}_{MM}_{DD}/renders/{project}_{Shot}.{SEQ}.dpx'
+        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{SEQ}.dpx'
 
     ##########################################################################################
     # Asset pipeline
