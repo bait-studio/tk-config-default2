@@ -235,11 +235,7 @@ paths:
     nuke_shot_render_mono_dpx:
         definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{SEQ}.dpx'
     nuke_shot_render_pub_mono_dpx:
-        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{SEQ}.dpx'
-    nuke_shot_render_stereo:
-        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{eye}.{SEQ}.dpx'
-    nuke_shot_render_pub_stereo:
-        definition: '@shot_root/editorial/renders/v{version}/{project}_{Shot}.{eye}.{SEQ}.dpx'
+        definition: '@shot_root/editorial/renders/publish/v{version}/{project}_{Shot}.{SEQ}.dpx'
     # review output
     shot_quicktime_quick:
         definition: '@shot_root/review/quickdaily/{Shot}_{iteration}.mov'
