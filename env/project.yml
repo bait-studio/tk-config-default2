@@ -21,6 +21,7 @@ includes:
 - ./includes/settings/tk-nuke.yml
 - ./includes/settings/tk-shell.yml
 - ./includes/settings/tk-shotgun.yml
+- ./includes/settings/tk-blender.yml
 
 ################################################################################
 # configuration for all engines to load in a project context
@@ -34,6 +35,7 @@ engines:
   tk-nukestudio: "@settings.tk-nuke.nukestudio.project"
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
+  tk-blender: "@settings.tk-blender.project"
 
 ################################################################################
 # reference all of the common frameworks

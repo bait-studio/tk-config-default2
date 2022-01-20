@@ -21,6 +21,7 @@ includes:
 - ./includes/settings/tk-nuke.yml
 - ./includes/settings/tk-shell.yml
 - ./includes/settings/tk-shotgun.yml
+- ./includes/settings/tk-blender.yml
 
 ################################################################################
 # configuration for all engines to load in an asset step context
@@ -33,6 +34,7 @@ engines:
   tk-nukestudio: "@settings.tk-nuke.nukestudio.asset_step"
   tk-shell: "@settings.tk-shell.asset_step"
   tk-shotgun: "@settings.tk-shotgun.asset_step"
+  tk-blender: "@settings.tk-blender.asset_step"
 
 ################################################################################
 # reference all of the common frameworks

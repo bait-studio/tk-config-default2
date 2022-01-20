@@ -41,3 +41,7 @@ engines.tk-shotgun.location:
   type: app_store
   name: tk-shotgun
   version: v0.10.1
+engines.tk-blender.location:
+  type: git
+  path: https://github.com/diegogarciahuerta/tk-blender
+  version: v1.1.1
