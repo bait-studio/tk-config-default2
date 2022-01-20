@@ -253,6 +253,33 @@ paths:
     hiero_render_path:
         definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.dpx'
 
+
+    #
+    # Blender
+    # Based on https://github.com/diegogarciahuerta/tk-blender/blob/master/config/core/templates.yml
+    #
+
+    # define the location of a work area
+    shot_work_area_blender:
+        definition: '@shot_root/work/blender'
+
+    # define the location of a publish area
+    shot_publish_area_blender:
+        definition: '@shot_root/publish/blender'
+
+    # The location of WIP session files
+    blender_shot_work:
+        definition: '@shot_root/work/blender/{name}.v{version}/{name}.v{version}.blend'
+
+    # The location of backups of WIP session files
+    blender_shot_snapshot:
+        definition: '@shot_root/work/blender/snapshots/{name}.v{version}/{name}.v{version}.{timestamp}.blend'
+
+    # The location of published session files
+    blender_shot_publish:
+        definition: '@shot_root/publish/blender/{name}.v{version}/{name}.v{version}.blend'
+    
+
     ##########################################################################################
     # Asset pipeline
 
@@ -352,6 +379,31 @@ paths:
     # The location of published nuke script files
     nuke_asset_publish:
         definition: '@asset_root/publish/nuke/{name}.v{version}.nk'
+
+    #
+    # Blender
+    # Based on https://github.com/diegogarciahuerta/tk-blender/blob/master/config/core/templates.yml
+    #
+
+    # Location of a work area
+    asset_work_area_blender:
+        definition: '@asset_root/work/blender'
+
+    # Location of a publish area
+    asset_publish_area_blender:
+        definition: '@asset_root/publish/blender'
+
+    # Location of WIP session files
+    blender_asset_work:
+        definition: '@asset_work_area_blender/{name}.v{version}.blend'
+
+    # Location of backups of WIP session files
+    blender_asset_snapshot:
+        definition: '@asset_work_area_blender/snapshots/{name}.v{version}.{timestamp}.blend'
+
+    # Location of the published session files
+    blender_asset_publish:
+        definition: '@asset_publish_area_blender/{name}.v{version}.blend'
 
 #
 # The strings section is similar to the paths section - but rather than defining paths
