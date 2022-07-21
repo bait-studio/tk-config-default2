@@ -45,4 +45,19 @@ class BeforeAppLaunch(tank.Hook):
         #Remove the old pipeline customisations frmo the NUKE_PATH var.
         #Need to be careful to ensure that the SG path that is appended to the NUKE_PATH var remains.
         if engine_name == "tk-nuke":
-            os.environ["NUKE_PATH"] = ";".join([x for x in os.environ["NUKE_PATH"].split(";") if x != "K:\\production03\\tools\\nuke"])
+
+            #Get current NUKE_PATH components
+            nukePathComponents = os.environ["NUKE_PATH"].split(";")
+
+            #Clear out the old pipeline path
+            nukePathComponents = [x for x in nukePathComponents if x != "K:\\production03\\tools\\nuke"]
+
+            #Add the new custom nuke init path
+            #TODO: Add this dynamically based on current version of BaitPipeline
+            nukePathComponents.append("K:\shotgrid\BaitPipeline\BaitNukeInit\core")
+
+            #Add the submit to deadline tool
+            nukePathComponents.append("K:\shotgrid\BaitPipeline\BaitSubmitNukeToDeadline")
+
+            #Join components and save
+            os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
