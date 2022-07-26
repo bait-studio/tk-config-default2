@@ -39,22 +39,15 @@ settings.tk-desktop.project:
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
   groups:
   - matches:
-    - "*Fla*"
-    - "*Houdini*"
-    - "*Mari*"
-    - "*Max*"
-    - "*Maya*"
-    - "*Motion*"
+    - "*Hiero*"
     - "*Nuke*"
     - "*Photoshop*"
     - "*After*"
     - "*Effects*"
-    name: Creative Tools
+    name: 2D Tools
   - matches:
-    - "*Hiero*"
-    name: Editorial Tools
-  - matches:
-    - "*Alias*"
-    - "*VRED*"
-    name: Automotive Tools
+    - "*Houdini*"
+    - "*Maya*"
+    - "*Blender*"
+    name: 3D Tools
   location: "@engines.tk-desktop.location"
