@@ -15,7 +15,7 @@ This hook is executed prior to application launch and is useful if you need
 to set environment variables or run scripts as part of the app initialization.
 """
 
-import os
+import os, shutil
 import tank
 
 class BeforeAppLaunch(tank.Hook):
@@ -69,7 +69,28 @@ class BeforeAppLaunch(tank.Hook):
             #Join components and save
             os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
 
-        #Update PySide2 path in Blender so that the SG panels can load.
         elif engine_name == "tk-blender":
-            #Join components and save
-            os.environ["PYSIDE2_PYTHONPATH"] = "K:\shotgrid\python\Blender3.2\python"
+            #We need to use a custom install of PySide 2 in order for the SG panels to load in Blender.
+            #This is hosted on the network at
+            networkPySide2InstallPath = "K:\shotgrid\python\Blender3.2\python"
+
+            #However loading the above from the network causes Blender to freeze for 20-30s on startup each time.
+            #To avoid this, we check for a local install of the above, copying it locally if needed, and then use that local version
+            localPySide2InstallPath = os.path.join(os.environ["APPDATA"], "shotgrid_pipeline", "python", "Blender3.2", "python")
+            
+            #If the local copy doesn't exist
+            if not os.path.exists(localPySide2InstallPath):
+                print("tk-blender: Local PySide install doesn't exist.")
+                if not os.path.exists(os.path.dirname(localPySide2InstallPath)):
+                    print("tk-blender: Making containing dir")
+                    os.makedirs(os.path.dirname(localPySide2InstallPath))
+                print("tk-blender: Copying network PySide to {}".format(localPySide2InstallPath))
+                try:
+                    shutil.copytree(networkPySide2InstallPath, localPySide2InstallPath)
+                    print("tk-blender: Copy completed")
+                except Exception as e:
+                    print("tk-blender: ERROR. Could not localise PySide.")
+                    print(e)
+                
+            #Tell Blender to use the local PySide path
+            os.environ["PYSIDE2_PYTHONPATH"] = localPySide2InstallPath
