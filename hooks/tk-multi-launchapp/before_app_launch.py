@@ -41,6 +41,13 @@ class BeforeAppLaunch(tank.Hook):
         #
         # > multi_launchapp = self.parent
         # > current_entity = multi_launchapp.context.entity
+
+        #Why aren't these showing up in Hiero on Distributed_1?
+        os.environ["DEBUG_CONTEXT"] = str(self.parent.context)
+        os.environ["DEBUG_ENGINE_NAME"] = str(engine_name)
+        os.environ["DEBUG_APP_PATH"] = str(app_path)
+        os.environ["DEBUG_APP_ARGS"] = str(app_args)
+        os.environ["DEBUG_VERSION"] = str(version)
         
         #Remove the old pipeline customisations frmo the NUKE_PATH var.
         #Need to be careful to ensure that the SG path that is appended to the NUKE_PATH var remains.
@@ -61,3 +68,8 @@ class BeforeAppLaunch(tank.Hook):
 
             #Join components and save
             os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
+
+        #Update PySide2 path in Blender so that the SG panels can load.
+        elif engine_name == "tk-blender":
+            #Join components and save
+            os.environ["PYSIDE2_PYTHONPATH"] = "K:\shotgrid\python\Blender3.2\python"
