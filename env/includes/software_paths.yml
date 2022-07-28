@@ -15,9 +15,9 @@
 ################################################################################
 
 # Hiero
-path.linux.hiero: "Nuke13.1"
-path.mac.hiero: "/Applications/Nuke13.1v1/Hiero13.1v1.app"
-path.windows.hiero: C:\Program Files\Nuke13.1v1\Nuke13.1.exe
+path.linux.hiero: "Nuke13.2"
+path.mac.hiero: "/Applications/Nuke13.2v2/Hiero13.2v2.app"
+path.windows.hiero: C:\Program Files\Nuke13.2v2\Nuke13.2.exe
 
 # RV
 path.linux.rv: "rv"
