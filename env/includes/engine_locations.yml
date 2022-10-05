@@ -33,6 +33,10 @@ engines.tk-nuke.location:
   type: app_store
   name: tk-nuke
   version: v0.14.3
+engines.tk-hiero.location:
+  type: path
+  name: tk-hiero
+  path: "{CONFIG_FOLDER}/../tk-hiero"
 
 engines.tk-shell.location:
   type: app_store
@@ -44,4 +48,4 @@ engines.tk-shotgun.location:
   version: v0.10.1
 engines.tk-blender.location:
   type: path
-  path: "{CONFIG_FOLDER}/../engines/tk-blender-1.1.1"
+  path: "{CONFIG_FOLDER}/../tk-blender-1.1.1"
