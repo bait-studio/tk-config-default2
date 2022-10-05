@@ -49,9 +49,13 @@ class BeforeAppLaunch(tank.Hook):
         os.environ["DEBUG_APP_ARGS"] = str(app_args)
         os.environ["DEBUG_VERSION"] = str(version)
         
-        #Remove the old pipeline customisations frmo the NUKE_PATH var.
-        #Need to be careful to ensure that the SG path that is appended to the NUKE_PATH var remains.
+        #Get the top level dir for this version of the pipeline
+        topLevelDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+        #Customise app inits
         if engine_name == "tk-nuke":
+            #Remove the old pipeline customisations from the NUKE_PATH var.
+            #Need to be careful to ensure that the SG path that is appended to the NUKE_PATH var remains.
 
             #Get current NUKE_PATH components
             nukePathComponents = os.environ["NUKE_PATH"].split(";")
@@ -60,11 +64,12 @@ class BeforeAppLaunch(tank.Hook):
             nukePathComponents = [x for x in nukePathComponents if x != "K:\\production03\\tools\\nuke"]
 
             #Add the new custom nuke init path
-            #TODO: Add this dynamically based on current version of BaitPipeline
-            nukePathComponents.append("K:\shotgrid\BaitPipeline\BaitNukeInit\core")
+            baitNukeInitDir = os.path.join(topLevelDir, "BaitNukeInit", "core")
+            nukePathComponents.append(baitNukeInitDir)
 
             #Add the submit to deadline tool
-            nukePathComponents.append("K:\shotgrid\BaitPipeline\BaitSubmitNukeToDeadline")
+            baitSubmitToDeadlineDir = os.path.join(topLevelDir, "BaitSubmitNukeToDeadline")
+            nukePathComponents.append(baitSubmitToDeadlineDir)
 
             #Join components and save
             os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
