@@ -48,4 +48,4 @@ engines.tk-shotgun.location:
   version: v0.10.1
 engines.tk-blender.location:
   type: path
-  path: "{CONFIG_FOLDER}/../tk-blender-1.1.1"
+  path: "{CONFIG_FOLDER}/../tk-blender"
