@@ -97,9 +97,8 @@ apps.tk-shotgun-launchvredreview.location:
   name: tk-shotgun-launchvredreview
   version: v1.1.2
 apps.tk-hiero-export.location:
-  type: app_store
-  name: tk-hiero-export
-  version: v0.7.2
+  type: dev
+  path: "{CONFIG_FOLDER}/../tk-hiero-export"
 apps.tk-hiero-openinshotgun.location:
   type: app_store
   name: tk-hiero-openinshotgun
