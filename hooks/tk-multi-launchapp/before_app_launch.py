@@ -51,8 +51,9 @@ class BeforeAppLaunch(tank.Hook):
         
         #Get the top level dir for this version of the pipeline
         configDir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-        configVersionDir = os.path.dirname(configDir)
         os.environ["CONFIG_DIR"] = configDir
+        os.environ["CONFIG_IS_DEV"] = configDir.startswith("C")
+        configVersionDir = os.path.dirname(configDir)
         os.environ["CONFIG_VERSION_DIR"] = configVersionDir
 
         # Add BaitTasks vars
