@@ -46,3 +46,5 @@ settings.tk-multi-launchapp.hiero:
   windows_args: --hiero
   menu_name: Hiero
   location: "@apps.tk-multi-launchapp.location"
+  hook_before_register_command: "{config}/tk-multi-launchapp/before_register_command.py"
+  hook_before_app_launch: "{config}/tk-multi-launchapp/before_app_launch.py"

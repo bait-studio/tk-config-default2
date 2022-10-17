@@ -42,7 +42,7 @@ class BeforeAppLaunch(tank.Hook):
         # > multi_launchapp = self.parent
         # > current_entity = multi_launchapp.context.entity
 
-        #Why aren't these showing up in Hiero on Distributed_1?
+        # Add args to environment for debugging purposes
         os.environ["DEBUG_CONTEXT"] = str(self.parent.context)
         os.environ["DEBUG_ENGINE_NAME"] = str(engine_name)
         os.environ["DEBUG_APP_PATH"] = str(app_path)
@@ -50,7 +50,15 @@ class BeforeAppLaunch(tank.Hook):
         os.environ["DEBUG_VERSION"] = str(version)
         
         #Get the top level dir for this version of the pipeline
-        topLevelDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+        configDir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        configVersionDir = os.path.dirname(configDir)
+        os.environ["CONFIG_DIR"] = configDir
+        os.environ["CONFIG_VERSION_DIR"] = configVersionDir
+
+        # Add BaitTasks vars
+        os.environ["BAIT_TASKS_DIR"] = os.path.join(configVersionDir, "BaitTasks")
+        os.environ["BAIT_TASKS_PYTHON_DIR"] = os.path.join(configVersionDir, "BaitTasks", "python")
+        os.environ["BAIT_TASKS_NUKESCRIPTS_DIR"] = os.path.join(configVersionDir, "BaitTasks", "nukescripts")
 
         #Customise app inits
         if engine_name == "tk-nuke":
@@ -64,15 +72,20 @@ class BeforeAppLaunch(tank.Hook):
             nukePathComponents = [x for x in nukePathComponents if x != "K:\\production03\\tools\\nuke"]
 
             #Add the new custom nuke init path
-            baitNukeInitDir = os.path.join(topLevelDir, "BaitNukeInit", "core")
+            baitNukeInitDir = os.path.join(configVersionDir, "BaitNukeInit", "core")
             nukePathComponents.append(baitNukeInitDir)
 
             #Add the submit to deadline tool
-            baitSubmitToDeadlineDir = os.path.join(topLevelDir, "BaitSubmitNukeToDeadline")
+            baitSubmitToDeadlineDir = os.path.join(configVersionDir, "BaitSubmitNukeToDeadline")
             nukePathComponents.append(baitSubmitToDeadlineDir)
 
             #Join components and save
             os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
+
+        elif engine_name == "tk-hiero":
+            # TODO: Add custom Hiero environment
+            # TODO: Ensure SG export preset is in place
+            pass
 
         elif engine_name == "tk-blender":
             #We need to use a custom install of PySide 2 in order for the SG panels to load in Blender.
