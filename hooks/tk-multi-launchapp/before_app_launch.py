@@ -52,7 +52,7 @@ class BeforeAppLaunch(tank.Hook):
         #Get the top level dir for this version of the pipeline
         configDir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
         os.environ["CONFIG_DIR"] = configDir
-        os.environ["CONFIG_IS_DEV"] = configDir.startswith("C")
+        os.environ["CONFIG_IS_DEV"] = "1" if configDir.startswith("C") else "0"
         configVersionDir = os.path.dirname(configDir)
         os.environ["CONFIG_VERSION_DIR"] = configVersionDir
 
