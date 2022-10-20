@@ -20,12 +20,12 @@ settings.tk-nuke-writenode.asset:
   template_script_work: nuke_asset_work
   write_nodes:
   - file_type: exr
-    name: Exr
-    proxy_publish_template:
-    proxy_render_template:
-    publish_template: nuke_asset_render_pub
-    render_template: nuke_asset_render
-    settings: {}
+    name: EXR
+    publish_template: nuke_shot_render_pub_exr
+    render_template: nuke_shot_render_exr
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings: {compression: "none"}
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
@@ -37,12 +37,12 @@ settings.tk-nuke-writenode.shot:
   write_nodes:
   - file_type: exr
     name: EXR
-    promote_write_knobs: []
-    proxy_publish_template:
-    proxy_render_template:
     publish_template: nuke_shot_render_pub_exr
     render_template: nuke_shot_render_exr
-    settings: {}
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings: {compression: "none"}
     tank_type: Rendered Image
     tile_color: []
+    promote_write_knobs: []
   location: "@apps.tk-nuke-writenode.location"
