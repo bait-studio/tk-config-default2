@@ -20,6 +20,8 @@ includes:
 - ./tk-shotgun-launchfolder.yml
 - ./tk-shotgun-launchpublish.yml
 - ./tk-shotgun-launchvredreview.yml
+- ./tk-multi-bidPDFGenerator.yml
+
 
 ################################################################################
 
@@ -100,4 +102,10 @@ settings.tk-shotgun.version:
   apps:
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
     tk-shotgun-launchpublish: "@settings.tk-shotgun-launchpublish"
+  location: "@engines.tk-shotgun.location"
+
+# bid
+settings.tk-shotgun.Bid:
+  apps:
+    tk-multi-bidPDFGenerator: "@settings.tk-multi-bidPDFGenerator"
   location: "@engines.tk-shotgun.location"

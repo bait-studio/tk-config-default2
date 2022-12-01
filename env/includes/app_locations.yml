@@ -119,4 +119,7 @@ apps.tk-nuke-writenode.location:
   name: tk-nuke-writenode
   type: app_store
   version: v1.6.1
+apps.tk-multi-bidPDFGenerator.location:
+  type: dev
+  path: "{CONFIG_FOLDER}/../tk-multi-bidPDFGenerator"
 frameworks: '@frameworks'
