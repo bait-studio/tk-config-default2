@@ -15,12 +15,14 @@ description: Apps and Engines when launching from a Bid item.
 
 includes:
 - ./includes/frameworks.yml
+- ./includes/settings/tk-shell.yml
 - ./includes/settings/tk-shotgun.yml
 
 ################################################################################
 # configuration for all engines to load in a Bid context
 
 engines:
+  tk-shell: "@settings.tk-shell.Bid"
   tk-shotgun: "@settings.tk-shotgun.Bid"
 
 ################################################################################

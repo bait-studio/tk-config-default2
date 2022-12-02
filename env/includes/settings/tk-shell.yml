@@ -17,6 +17,7 @@ includes:
 - ./tk-multi-launchapp.yml
 - ./tk-multi-publish2.yml
 - ./tk-multi-screeningroom.yml
+- ./tk-multi-bidPDFGenerator.yml
 
 ################################################################################
 
@@ -70,3 +71,9 @@ settings.tk-shell.shot_step:
     tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
     tk-multi-screeningroom: '@settings.tk-multi-screeningroom.rv'
   location: '@engines.tk-shell.location'
+
+# bid
+settings.tk-shell.Bid:
+  apps:
+    tk-multi-bidPDFGenerator: "@settings.tk-multi-bidPDFGenerator"
+  location: "@engines.tk-shell.location"
