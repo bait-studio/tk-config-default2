@@ -84,9 +84,16 @@ class BeforeAppLaunch(tank.Hook):
             os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
 
         elif engine_name == "tk-hiero":
-            # TODO: Add custom Hiero environment
-            # TODO: Ensure SG export preset is in place
-            pass
+            #Get current HIERO_PLUGIN_PATH components
+            hieroPluginPathComponents = os.environ["HIERO_PLUGIN_PATH"].split(";")
+
+            #Add the new startup task presets folder
+            # TODO: Move to custom Hiero Init repo?
+            hieroStartupFolder = os.path.join(configVersionDir, "tk-hiero-export", "startup")
+            hieroPluginPathComponents.append(hieroStartupFolder)
+
+            #Join components and save
+            os.environ["HIERO_PLUGIN_PATH"] = ";".join(hieroPluginPathComponents)
 
         elif engine_name == "tk-blender":
             #We need to use a custom install of PySide 2 in order for the SG panels to load in Blender.
