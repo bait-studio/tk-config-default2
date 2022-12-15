@@ -52,7 +52,6 @@ settings.tk-shotgun.playlist:
 settings.tk-shotgun.project:
   apps:
     tk-multi-launchapp: "@settings.tk-multi-launchapp"
-    tk-multi-launchhiero: "@settings.tk-multi-launchapp.hiero"
     tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
     tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
