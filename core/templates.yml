@@ -56,6 +56,13 @@ keys:
     segment_name:
         type: str
 
+    # adds support for using Task name in a field
+    # WARNING: a task is NOT always available so be careful when using this.
+    Task:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: content
+
     # Represents the optional output name for frames written by the Shotgun Write Node
     nuke.output:
         alias: output
@@ -224,24 +231,24 @@ paths:
         definition: '@shot_root/publish/nuke'
     # The location of WIP script files
     nuke_shot_work:
-        definition: '@shot_root/work/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/work/nuke/{Shot}[_{Task}].v{version}.nk'
     # The location of backups of WIP files
     nuke_shot_snapshot:
-        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{name}].v{version}.{timestamp}.nk'
+        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{Task}].v{version}.{timestamp}.nk'
     # The location of published nuke script files
     nuke_shot_publish:
-        definition: '@shot_root/publish/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/publish/nuke/{Shot}[_{Task}].v{version}.nk'
     # write node outputs
     nuke_shot_render_exr:
-        definition: '@shot_root/work/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.exr'
+        definition: '@shot_root/work/nuke/renders/v{version}/{Shot}[_{Task}].{SEQ}.exr'
     nuke_shot_render_pub_exr:
-        definition: '@shot_root/publish/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.exr'
+        definition: '@shot_root/publish/nuke/renders/v{version}/{Shot}[_{Task}].{SEQ}.exr'
     # review output
     shot_quicktime_quick:
-        definition: '@shot_root/review/quickdaily/{Shot}[_{name}]_{timestamp}.mov'
+        definition: '@shot_root/review/quickdaily/{Shot}[_{Task}]_{timestamp}.mov'
     # review output - used when publishing web-reviewable from Nuke
     nuke_shot_render_movie:
-        definition: '@shot_root/review/{Shot}[_{name}]_reviewable_v{version}.mov'
+        definition: '@shot_root/review/{Shot}[_{Task}]_reviewable_v{version}.mov'
 
     #
     # Hiero
