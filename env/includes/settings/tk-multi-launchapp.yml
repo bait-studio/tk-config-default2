@@ -32,19 +32,3 @@ settings.tk-multi-launchapp.shotgun:
   location: "@apps.tk-multi-launchapp.location"
 
 ################################################################################
-
-# app-specific launchapp configurations
-
-# hiero
-settings.tk-multi-launchapp.hiero:
-  engine: tk-hiero
-  icon: "{target_engine}/icon_hiero_256.png"
-  linux_path: "@path.linux.hiero"
-  linux_args: --hiero
-  mac_path: "@path.mac.hiero"
-  windows_path: "@path.windows.hiero"
-  windows_args: --hiero
-  menu_name: Hiero
-  location: "@apps.tk-multi-launchapp.location"
-  hook_before_register_command: "{config}/tk-multi-launchapp/before_register_command.py"
-  hook_before_app_launch: "{config}/tk-multi-launchapp/before_app_launch.py"
