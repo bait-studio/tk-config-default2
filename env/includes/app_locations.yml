@@ -117,6 +117,6 @@ apps.tk-nuke-quickreview.location:
   version: v1.2.1
 apps.tk-nuke-writenode.location:
   name: tk-nuke-writenode
-  type: app_store
-  version: v1.6.1
+  type: dev
+  path: "{CONFIG_FOLDER}/../tk-nuke-writenode"
 frameworks: '@frameworks'
