@@ -132,17 +132,17 @@ paths:
 
     # The location of WIP files
     hiero_project_work:
-        definition: 'editorial/work/{name}_v{version}.hrox'
+        definition: 'production/editorial/work/{name}_v{version}.hrox'
     hiero_project_work_area:
-        definition: 'editorial/work'
+        definition: 'production/editorial/work'
     # The location of backups of WIP files
     hiero_project_snapshot:
-        definition: 'editorial/work/snapshots/{name}_v{version}_{timestamp}.hrox'
+        definition: 'production/editorial/work/snapshots/{name}_v{version}_{timestamp}.hrox'
     # The location of published hiero files
     hiero_project_publish:
-        definition: 'editorial/publish/{name}_v{version}.hrox'
+        definition: 'production/editorial/publish/{name}_v{version}.hrox'
     hiero_project_publish_area:
-        definition: 'editorial/publish'
+        definition: 'production/editorial/publish'
 
 
     ##########################################################################################
@@ -160,19 +160,19 @@ paths:
 
     # define the location of a work area
     shot_work_area_maya:
-        definition: '@shot_root/work/maya'
+        definition: '@shot_root/{name}/work/maya'
     # define the location of a publish area
     shot_publish_area_maya:
-        definition: '@shot_root/publish/maya'
+        definition: '@shot_root/{name}/publish/maya'
     # The location of WIP files
     maya_shot_work:
-        definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
+        definition: '@shot_root/{name}/work/maya/{name}.v{version}.{maya_extension}'
     # The location of backups of WIP files
     maya_shot_snapshot:
-        definition: '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
+        definition: '@shot_root/{name}/work/maya/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_shot_publish:
-        definition: '@shot_root/publish/maya/{name}.v{version}.{maya_extension}'
+        definition: '@shot_root/{name}/publish/maya/{name}.v{version}.{maya_extension}'
 
 
     #
@@ -181,36 +181,36 @@ paths:
 
     # define the location of a work area
     shot_work_area_houdini:
-        definition: '@shot_root/work/houdini'
+        definition: '@shot_root/{name}/work/houdini'
     # define the location of a publish area
     shot_publish_area_houdini:
-        definition: '@shot_root/publish/houdini'
+        definition: '@shot_root/{name}/publish/houdini'
     # The location of WIP files
     houdini_shot_work:
-        definition: '@shot_root/work/houdini/{name}.v{version}.hip'
+        definition: '@shot_root/{name}/work/houdini/{name}.v{version}.hip'
     # The location of backups of WIP files
     houdini_shot_snapshot:
-        definition: '@shot_root/work/houdini/snapshots/{name}.v{version}.{timestamp}.hip'
+        definition: '@shot_root/{name}/work/houdini/snapshots/{name}.v{version}.{timestamp}.hip'
     # The location of published houdini files
     houdini_shot_publish:
-        definition: '@shot_root/publish/houdini/{name}.v{version}.hip'
+        definition: '@shot_root/{name}/publish/houdini/{name}.v{version}.hip'
     # Alembic caches
     houdini_shot_work_alembic_cache:
-        definition: '@shot_root/work/houdini/cache/alembic/{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.abc'
+        definition: '@shot_root/{name}/work/houdini/cache/alembic/{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.abc'
 
     # Rendered images
     houdini_shot_render:
-        definition: '@shot_root/work/images/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/{name}/work/images/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
 
     # Additional mantra outputs
     houdini_shot_ifd:
-        definition: '@shot_root/work/ifds/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.ifd'
+        definition: '@shot_root/{name}/work/ifds/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.ifd'
 
     houdini_shot_dcm:
-        definition: '@shot_root/work/dcms/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.dcm'
+        definition: '@shot_root/{name}/work/dcms/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.dcm'
 
     houdini_shot_extra_plane:
-        definition: '@shot_root/work/images/{name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/{name}/work/images/{name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
 
     #
     # Nuke
@@ -218,30 +218,30 @@ paths:
 
     # define the location of a work area
     shot_work_area_nuke:
-        definition: '@shot_root/work/nuke'
+        definition: '@shot_root/{name}/work/nuke'
     # define the location of a publish area
     shot_publish_area_nuke:
-        definition: '@shot_root/publish/nuke'
+        definition: '@shot_root/{name}/publish/nuke'
     # The location of WIP script files
     nuke_shot_work:
-        definition: '@shot_root/work/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/{name}/work/nuke/{Shot}[_{name}].v{version}.nk'
     # The location of backups of WIP files
     nuke_shot_snapshot:
-        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{name}].v{version}.{timestamp}.nk'
+        definition: '@shot_root/{name}/work/nuke/snapshots/{Shot}[_{name}].v{version}.{timestamp}.nk'
     # The location of published nuke script files
     nuke_shot_publish:
-        definition: '@shot_root/publish/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/{name}/publish/nuke/{Shot}[_{name}].v{version}.nk'
     # write node outputs
     nuke_shot_render_exr:
-        definition: '@shot_root/work/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.exr'
+        definition: '@shot_root/{name}/output/nuke/{Shot}[_{name}].v{version}/{Shot}[_{name}].v{version}.{SEQ}.exr'
     nuke_shot_render_pub_exr:
-        definition: '@shot_root/publish/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.exr'
+        definition: '@shot_root/{name}/publish/nuke/{Shot}[_{name}].v{version}/{Shot}[_{name}].v{version}.{SEQ}.exr'
     # review output
     shot_quicktime_quick:
-        definition: '@shot_root/review/quickdaily/{Shot}[_{name}]_{timestamp}.mov'
+        definition: '@shot_root/{name}/review/quickdaily/{Shot}[_{name}]_{timestamp}.mov'
     # review output - used when publishing web-reviewable from Nuke
     nuke_shot_render_movie:
-        definition: '@shot_root/review/{Shot}[_{name}]_reviewable_v{version}.mov'
+        definition: '@shot_root/{name}/review/{Shot}[_{name}]_reviewable_v{version}.mov'
 
     #
     # Hiero
@@ -249,9 +249,9 @@ paths:
 
     # export of shot asset data from hiero
     hiero_plate_path:
-        definition: '@shot_root/editorial/plates/v{version}/{Shot}.{SEQ}.exr'
+        definition: '@shot_root/plates/{Shot}.v{version}/{Shot}.{SEQ}.v{version}.exr'
     hiero_render_path:
-        definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.exr'
+        definition: '@shot_root/renders/{Shot}.v{version}/{Shot}.{SEQ}.v{version}.exr'
 
 
     #
@@ -261,23 +261,23 @@ paths:
 
     # define the location of a work area
     shot_work_area_blender:
-        definition: '@shot_root/work/blender'
+        definition: '@shot_root/{name}/work/blender'
 
     # define the location of a publish area
     shot_publish_area_blender:
-        definition: '@shot_root/publish/blender'
+        definition: '@shot_root/{name}/publish/blender'
 
     # The location of WIP session files
     blender_shot_work:
-        definition: '@shot_root/work/blender/{name}.v{version}/{name}.v{version}.blend'
+        definition: '@shot_root/{name}/work/blender/{name}.v{version}/{name}.v{version}.blend'
 
     # The location of backups of WIP session files
     blender_shot_snapshot:
-        definition: '@shot_root/work/blender/snapshots/{name}.v{version}/{name}.v{version}.{timestamp}.blend'
+        definition: '@shot_root/{name}/work/blender/snapshots/{name}.v{version}/{name}.v{version}.{timestamp}.blend'
 
     # The location of published session files
     blender_shot_publish:
-        definition: '@shot_root/publish/blender/{name}.v{version}/{name}.v{version}.blend'
+        definition: '@shot_root/{name}/publish/blender/{name}.v{version}/{name}.v{version}.blend'
     
 
     ##########################################################################################
