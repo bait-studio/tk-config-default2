@@ -120,7 +120,7 @@ class BeforeAppLaunch(tank.Hook):
         elif engine_name == "tk-blender":
             #We need to use a custom install of PySide 2 in order for the SG panels to load in Blender.
             #This is hosted on the network at
-            networkPySide2InstallPath = "\\baitqn\Media\Core\Pipeline\python\Blender3.2\python"
+            networkPySide2InstallPath = "K:\shotgrid\python\Blender3.2\python"
 
             #However loading the above from the network causes Blender to freeze for 20-30s on startup each time.
             #To avoid this, we check for a local install of the above, copying it locally if needed, and then use that local version
