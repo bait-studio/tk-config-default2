@@ -215,7 +215,7 @@ paths:
     #
     # Nuke
     #
-
+    # TODO: Change nuke file versions from '.'' to '_'
     # define the location of a work area
     shot_work_area_nuke:
         definition: '@shot_root/work/nuke'
