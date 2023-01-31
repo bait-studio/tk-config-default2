@@ -215,7 +215,6 @@ paths:
     #
     # Nuke
     #
-    # TODO: Change nuke file versions from '.'' to '_'
     # define the location of a work area
     shot_work_area_nuke:
         definition: '@shot_root/work/nuke'
@@ -224,13 +223,13 @@ paths:
         definition: '@shot_root/publish/nuke'
     # The location of WIP script files
     nuke_shot_work:
-        definition: '@shot_root/work/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/work/nuke/{Shot}[_{name}]_v{version}.nk'
     # The location of backups of WIP files
     nuke_shot_snapshot:
-        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{name}].v{version}.{timestamp}.nk'
+        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{name}]_v{version}.{timestamp}.nk'
     # The location of published nuke script files
     nuke_shot_publish:
-        definition: '@shot_root/publish/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/publish/nuke/{Shot}[_{name}]_v{version}.nk'
     # write node outputs
     nuke_shot_render_exr:
         definition: '@shot_root/work/nuke/renders/{Shot}[_{name}]_v{version}/{Shot}[_{name}]_v{version}.{SEQ}.exr'
@@ -249,9 +248,9 @@ paths:
 
     # export of shot asset data from hiero
     hiero_plate_path:
-        definition: '@shot_root/editorial/plates/v{version}/{Shot}.{SEQ}.exr'
+        definition: '@shot_root/editorial/plates/{Shot}_v{version}/{Shot}_v{version}.{SEQ}.exr'
     hiero_render_path:
-        definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.exr'
+        definition: '@shot_root/editorial/renders/{Shot}_v{version}/{Shot}_v{version}.{SEQ}.exr'
 
 
     #
