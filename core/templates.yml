@@ -225,13 +225,13 @@ paths:
         definition: '@shot_root/publish/nuke'
     # The location of WIP script files
     nuke_shot_work:
-        definition: '@shot_root/work/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/work/nuke/{Shot}[_{name}]_v{version}.nk'
     # The location of backups of WIP files
     nuke_shot_snapshot:
-        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{name}].v{version}.{timestamp}.nk'
+        definition: '@shot_root/work/nuke/snapshots/{Shot}[_{name}]_v{version}.{timestamp}.nk'
     # The location of published nuke script files
     nuke_shot_publish:
-        definition: '@shot_root/publish/nuke/{Shot}[_{name}].v{version}.nk'
+        definition: '@shot_root/publish/nuke/{Shot}[_{name}]_v{version}.nk'
     # write node outputs
     # EXR:
     nuke_shot_render_exr:
@@ -384,13 +384,13 @@ paths:
         definition: '@asset_root/review/quickdaily/{Asset}_{name}_{iteration}.mov'
     # The location of WIP script files
     nuke_asset_work:
-        definition: '@asset_root/work/nuke/{name}.v{version}.nk'
+        definition: '@asset_root/work/nuke/{name}_v{version}.nk'
     # The location of backups of WIP files
     nuke_asset_snapshot:
-        definition: '@asset_root/work/nuke/snapshots/{name}.v{version}.{timestamp}.nk'
+        definition: '@asset_root/work/nuke/snapshots/{name}_v{version}.{timestamp}.nk'
     # The location of published nuke script files
     nuke_asset_publish:
-        definition: '@asset_root/publish/nuke/{name}.v{version}.nk'
+        definition: '@asset_root/publish/nuke/{name}_v{version}.nk'
 
     #
     # Blender
