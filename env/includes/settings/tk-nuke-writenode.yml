@@ -45,4 +45,26 @@ settings.tk-nuke-writenode.shot:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
+  
+  - file_type: dpx
+    name: DPX
+    publish_template: nuke_shot_render_pub_dpx
+    render_template: nuke_shot_render_dpx
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings: {datatype: "10 bit", colorspace: 'AlexaV3LogC'}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: ['datatype']
+
+  # - file_type: mov
+  #   name: MOV
+  #   publish_template: nuke_shot_render_pub_mov
+  #   render_template: nuke_shot_render_mov
+  #   proxy_publish_template: null
+  #   proxy_render_template: null
+  #   settings: {mov_prores_codec_profile: "ProRes 4:4:4:4 12-bit"}
+  #   tank_type: Rendered Image
+  #   tile_color: []
+  #   promote_write_knobs: [mov64_codec', 'mov64_fps', 'mov_prores_codec_profile']
   location: "@apps.tk-nuke-writenode.location"
