@@ -88,6 +88,18 @@ class BeforeAppLaunch(tank.Hook):
             #Get current HIERO_PLUGIN_PATH components
             hieroPluginPathComponents = os.environ["HIERO_PLUGIN_PATH"].split(";")
 
+            # TODO: set path to current dir like the nuke.
+
+            #Clear out the old pipeline path
+            hieroPluginPathComponents = [x for x in hieroPluginPathComponents if x != "K:\\production03\\tools\\nuke"]
+
+            #Add the new custom hiero init path
+            hieroPluginInitDir = os.path.join(configVersionDir, "BaitNukeInit", "core")
+            hieroPluginPathComponents.append(hieroPluginInitDir)
+
+            #Join components and save
+            os.environ["HIERO_PLUGIN_PATH"] = ";".join(hieroPluginPathComponents)
+
             #Add the startup task presets folder.
             # Hiero saves changes in a Hiero session to the imported presets.
             # In our case this means that a Hiero artist can override the pipeline config version of the template.
