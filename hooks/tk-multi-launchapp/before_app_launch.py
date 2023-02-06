@@ -49,11 +49,23 @@ class BeforeAppLaunch(tank.Hook):
         os.environ["DEBUG_APP_PATH"] = str(app_path)
         os.environ["DEBUG_APP_ARGS"] = str(app_args)
         os.environ["DEBUG_VERSION"] = str(version)
+
+        # Add SG vars for easy lookup
+        os.environ["SG_PROJECT_ID_STR"] = str(self.parent.context.project["id"])
+        project_entity = self.parent.shotgun.find_one(
+            "Project", 
+            [["id", "is", self.parent.context.project["id"]]], 
+            ["sg_working_format"]
+        )
+        
+        # default the working format to EXR
+        os.environ["SG_WORKING_FORMAT"] = "EXR"
+        if project_entity:
+            os.environ["SG_WORKING_FORMAT"] = project_entity.get("sg_working_format", "EXR")
         
         #Get the top level dir for this version of the pipeline
         configDir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
         os.environ["CONFIG_DIR"] = configDir
-        os.environ["CONFIG_IS_DEV"] = "1" if configDir.startswith("C") else "0"
         configVersionDir = os.path.dirname(configDir)
         os.environ["CONFIG_VERSION_DIR"] = configVersionDir
 
