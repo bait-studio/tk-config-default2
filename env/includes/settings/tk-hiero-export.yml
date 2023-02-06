@@ -34,8 +34,8 @@ settings.tk-hiero-export:
   template_render_path_dpx: hiero_render_path_dpx
 
   dpx_write_node_properties:
-  - {datatype: '12 bit'}
+    datatype: '12 bit'
   exr_write_node_properties:
-  - {}
+    datatype: '16 bit half'
 
   location: "@apps.tk-hiero-export.location"
