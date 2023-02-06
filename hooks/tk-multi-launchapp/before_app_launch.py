@@ -55,13 +55,15 @@ class BeforeAppLaunch(tank.Hook):
         project_entity = self.parent.shotgun.find_one(
             "Project", 
             [["id", "is", self.parent.context.project["id"]]], 
-            ["sg_working_format"]
+            ["sg_working_format", "name"]
         )
         
         # default the working format to EXR
+        os.environ["SG_PROJECT_NAME"] = ""
         os.environ["SG_WORKING_FORMAT"] = "EXR"
         if project_entity:
             os.environ["SG_WORKING_FORMAT"] = project_entity.get("sg_working_format", "EXR")
+            os.environ["SG_PROJECT_NAME"] = project_entity.get("name", "")
         
         #Get the top level dir for this version of the pipeline
         configDir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -97,37 +99,8 @@ class BeforeAppLaunch(tank.Hook):
             os.environ["NUKE_PATH"] = ";".join(nukePathComponents)
 
         elif engine_name == "tk-hiero":
-            #Get current HIERO_PLUGIN_PATH components
-            hieroPluginPathComponents = os.environ["HIERO_PLUGIN_PATH"].split(";")
-
-            #Add the startup task presets folder.
-            # Hiero saves changes in a Hiero session to the imported presets.
-            # In our case this means that a Hiero artist can override the pipeline config version of the template.
-            # To prevent this, we copy the startup folder to a local temp location here.
-            # This means that changes made to the template will not persist between sessions, and will
-            # need to be made at a config level, as desired.
-
-            # TODO: Move to custom Hiero Init repo?
-            # Get the path to the startup folder
-            hieroStartupFolderSource = os.path.join(configVersionDir, "tk-hiero-export", "startup")
-
-            # Get the target path
-            hieroStartupFolderTargetPath = os.path.join(tempfile.gettempdir(), "tk-hiero-export", "startup")
-            
-            # copy the new folder into place
-            # copy_tree will overwrite existing files so no need to delete.
-            try:
-                if not os.path.exists(hieroStartupFolderTargetPath):
-                    os.makedirs(hieroStartupFolderTargetPath)
-                copy_tree(hieroStartupFolderSource, hieroStartupFolderTargetPath)
-            except Exception as e:
-                pass
-
-            # Add the temp version to the Hiero plugin path
-            hieroPluginPathComponents.append(hieroStartupFolderTargetPath)
-
-            #Join components and save
-            os.environ["HIERO_PLUGIN_PATH"] = ";".join(hieroPluginPathComponents)
+            # implement tk-hiero startup folder
+            pass
 
         elif engine_name == "tk-blender":
             #We need to use a custom install of PySide 2 in order for the SG panels to load in Blender.
