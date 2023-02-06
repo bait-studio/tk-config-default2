@@ -29,6 +29,16 @@ settings.tk-nuke-writenode.asset:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
+  - file_type: dpx
+    name: DPX
+    publish_template: nuke_shot_render_pub_dpx
+    render_template: nuke_shot_render_dpx
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings: {compression: "none"}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: []
   location: "@apps.tk-nuke-writenode.location"
 
 # shot
@@ -39,6 +49,16 @@ settings.tk-nuke-writenode.shot:
     name: EXR
     publish_template: nuke_shot_render_pub_exr
     render_template: nuke_shot_render_exr
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings: {compression: "none"}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: []
+  - file_type: dpx
+    name: DPX
+    publish_template: nuke_shot_render_pub_dpx
+    render_template: nuke_shot_render_dpx
     proxy_publish_template: null
     proxy_render_template: null
     settings: {compression: "none"}

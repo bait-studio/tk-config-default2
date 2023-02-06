@@ -231,11 +231,17 @@ paths:
     # The location of published nuke script files
     nuke_shot_publish:
         definition: '@shot_root/publish/nuke/{Shot}[_{name}].v{version}.nk'
+
     # write node outputs
     nuke_shot_render_exr:
         definition: '@shot_root/work/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.exr'
     nuke_shot_render_pub_exr:
         definition: '@shot_root/publish/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.exr'
+    nuke_shot_render_dpx:
+        definition: '@shot_root/work/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.dpx'
+    nuke_shot_render_pub_dpx:
+        definition: '@shot_root/publish/nuke/renders/v{version}/{Shot}[_{name}].{SEQ}.dpx'
+
     # review output
     shot_quicktime_quick:
         definition: '@shot_root/review/quickdaily/{Shot}[_{name}]_{timestamp}.mov'
@@ -248,10 +254,14 @@ paths:
     #
 
     # export of shot asset data from hiero
-    hiero_plate_path:
+    hiero_plate_path_exr:
         definition: '@shot_root/editorial/plates/v{version}/{Shot}.{SEQ}.exr'
-    hiero_render_path:
+    hiero_render_path_exr:
         definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.exr'
+    hiero_plate_path_dpx:
+        definition: '@shot_root/editorial/plates/v{version}/{Shot}.{SEQ}.dpx'
+    hiero_render_path_dpx:
+        definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.dpx'
 
 
     #
