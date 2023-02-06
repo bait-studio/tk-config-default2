@@ -33,4 +33,9 @@ settings.tk-hiero-export:
   template_plate_path_dpx: hiero_plate_path_dpx
   template_render_path_dpx: hiero_render_path_dpx
 
+  dpx_write_node_properties:
+  - {datatype: '12 bit'}
+  exr_write_node_properties:
+  - {}
+
   location: "@apps.tk-hiero-export.location"
