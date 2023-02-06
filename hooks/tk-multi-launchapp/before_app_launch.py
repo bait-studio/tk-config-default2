@@ -57,9 +57,8 @@ class BeforeAppLaunch(tank.Hook):
             [["id", "is", self.parent.context.project["id"]]], 
             ["sg_working_format", "name"]
         )
-        
-        # default the working format to EXR
         os.environ["SG_PROJECT_NAME"] = ""
+        os.environ["SG_PROJECT_ROOT"] = self.parent.tank.project_path
         os.environ["SG_WORKING_FORMAT"] = "EXR"
         if project_entity:
             os.environ["SG_WORKING_FORMAT"] = project_entity.get("sg_working_format", "EXR")
