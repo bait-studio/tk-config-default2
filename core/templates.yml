@@ -256,13 +256,8 @@ paths:
     # export of shot asset data from hiero
     hiero_plate_path_exr:
         definition: '@shot_root/editorial/plates/v{version}/{Shot}.{SEQ}.exr'
-    hiero_render_path_exr:
-        definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.exr'
     hiero_plate_path_dpx:
         definition: '@shot_root/editorial/plates/v{version}/{Shot}.{SEQ}.dpx'
-    hiero_render_path_dpx:
-        definition: '@shot_root/editorial/renders/v{version}/{Shot}.{SEQ}.dpx'
-
 
     #
     # Blender
