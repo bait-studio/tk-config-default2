@@ -25,7 +25,9 @@ settings.tk-nuke-writenode.asset:
     render_template: nuke_shot_render_exr
     proxy_publish_template: null
     proxy_render_template: null
-    settings: {compression: "none"}
+    settings:
+      compression: "none"
+      datatype: "16 bit half"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
@@ -35,7 +37,8 @@ settings.tk-nuke-writenode.asset:
     render_template: nuke_shot_render_dpx
     proxy_publish_template: null
     proxy_render_template: null
-    settings: {compression: "none"}
+    settings:
+      datatype: "12 bit"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
@@ -51,7 +54,9 @@ settings.tk-nuke-writenode.shot:
     render_template: nuke_shot_render_exr
     proxy_publish_template: null
     proxy_render_template: null
-    settings: {compression: "none"}
+    settings:
+      compression: "none"
+      datatype: "16 bit half"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
@@ -61,7 +66,8 @@ settings.tk-nuke-writenode.shot:
     render_template: nuke_shot_render_dpx
     proxy_publish_template: null
     proxy_render_template: null
-    settings: {compression: "none"}
+    settings:
+      datatype: "12 bit"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
