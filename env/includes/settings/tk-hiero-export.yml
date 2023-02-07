@@ -17,7 +17,6 @@ includes:
 
 settings.tk-hiero-export:
   template_version: hiero_version
-  template_nuke_script_path: nuke_shot_work
 
   nuke_script_toolkit_write_nodes_exr:
   - {channel: exr, name: EXR}
@@ -25,17 +24,13 @@ settings.tk-hiero-export:
   nuke_script_toolkit_write_nodes_dpx:
   - {channel: dpx, name: DPX}
   
-  template_nuke_render_path_exr: nuke_shot_render_exr
+  template_nuke_script_path: nuke_shot_work
+
   template_plate_path_exr: hiero_plate_path_exr
-  template_render_path_exr: hiero_render_path_exr
+  template_nuke_render_path_exr: nuke_shot_render_exr
 
-  template_nuke_render_path_dpx: nuke_shot_render_dpx
   template_plate_path_dpx: hiero_plate_path_dpx
-  template_render_path_dpx: hiero_render_path_dpx
+  template_nuke_render_path_dpx: nuke_shot_render_dpx
 
-  dpx_write_node_properties:
-    datatype: '12 bit'
-  exr_write_node_properties:
-    datatype: '16 bit half'
 
   location: "@apps.tk-hiero-export.location"
