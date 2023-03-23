@@ -174,6 +174,7 @@ settings.tk-multi-loader2.nuke:
     filters:
     - [task_assignees, is, '{context.user}']
     - [project, is, '{context.project}']
+    - [sg_status_list, is not, 'dlvr']
     hierarchy: [entity, content]
   publish_filters: [["sg_status_list", "is_not", null]]
   location: "@apps.tk-multi-loader2.location"
@@ -201,6 +202,7 @@ settings.tk-multi-loader2.nukestudio.project:
     filters:
     - [task_assignees, is, '{context.user}']
     - [project, is, '{context.project}']
+    - [sg_status_list, is not, 'dlvr']
     hierarchy: [entity, content]
   publish_filters: [["sg_status_list", "is_not", null]]
   location: "@apps.tk-multi-loader2.location"
@@ -232,6 +234,7 @@ settings.tk-multi-loader2.nukestudio:
     filters:
     - [task_assignees, is, '{context.user}']
     - [project, is, '{context.project}']
+    - [sg_status_list, is not, 'dlvr']
     hierarchy: [entity, content]
   publish_filters: [["sg_status_list", "is_not", null]]
   location: "@apps.tk-multi-loader2.location"
