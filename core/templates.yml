@@ -365,7 +365,7 @@ paths:
     # define the location of a publish area
     asset_publish_area_nuke:
         definition: '@asset_root/publish'
-    # outputs from the Shotgun Write Node for assets {Shot}[_{name}].v{version}.nk
+    # outputs from the Shotgun Write Node for assets
     nuke_asset_render:
         definition: '@asset_root/work/images/{name}/v{version}/{width}x{height}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
     nuke_asset_render_pub:
