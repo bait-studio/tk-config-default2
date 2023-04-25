@@ -88,6 +88,8 @@ keys:
         alias: DD
     project:
         type: str
+    track:
+        type: str
 
     # Maya supports two extension types.
     maya_extension:
@@ -255,9 +257,9 @@ paths:
 
     # export of shot asset data from hiero
     hiero_plate_path_exr:
-        definition: '@shot_root/editorial/plates/{Shot}_v{version}/{Shot}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/editorial/plates/{Shot}_{track}_v{version}/{Shot}_{track}_v{version}.{SEQ}.exr'
     hiero_plate_path_dpx:
-        definition: '@shot_root/editorial/plates/{Shot}_v{version}/{Shot}_v{version}.{SEQ}.dpx'
+        definition: '@shot_root/editorial/plates/{Shot}_{track}_v{version}/{Shot}_{track}_v{version}.{SEQ}.dpx'
 
     #
     # Blender
