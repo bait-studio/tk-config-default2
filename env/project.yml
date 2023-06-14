@@ -22,6 +22,8 @@ includes:
 - ./includes/settings/tk-shell.yml
 - ./includes/settings/tk-shotgun.yml
 - ./includes/settings/tk-blender.yml
+- ./includes/settings/tk-photoshopcc.yml
+- ./includes/settings/tk-aftereffects.yml
 
 ################################################################################
 # configuration for all engines to load in a project context
@@ -36,6 +38,8 @@ engines:
   tk-shell: "@settings.tk-shell.project"
   tk-shotgun: "@settings.tk-shotgun.project"
   tk-blender: "@settings.tk-blender.project"
+  tk-photoshopcc: "@settings.tk-photoshopcc.project"
+  tk-aftereffects: "@settings.tk-aftereffects.project"
 
 ################################################################################
 # reference all of the common frameworks

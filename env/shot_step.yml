@@ -22,6 +22,8 @@ includes:
 - ./includes/settings/tk-shell.yml
 - ./includes/settings/tk-shotgun.yml
 - ./includes/settings/tk-blender.yml
+- ./includes/settings/tk-photoshopcc.yml
+- ./includes/settings/tk-aftereffects.yml
 
 ################################################################################
 # configuration for all engines to load in a shot step context
@@ -36,6 +38,8 @@ engines:
   tk-shell: "@settings.tk-shell.shot_step"
   tk-shotgun: "@settings.tk-shotgun.shot_step"
   tk-blender: "@settings.tk-blender.shot_step"
+  tk-photoshopcc: "@settings.tk-photoshopcc.shot_step"
+  tk-aftereffects: "@settings.tk-aftereffects.shot_step"
 
 ################################################################################
 # reference all of the common frameworks
