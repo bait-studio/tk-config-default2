@@ -52,3 +52,11 @@ engines.tk-shotgun.location:
 engines.tk-blender.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-blender"
+engines.tk-substancedesigner.location:
+  type: path
+  path: "{CONFIG_FOLDER}/../tk-substancedesigner"
+  version: v1.0.0
+engines.tk-substancepainter.location:
+  type: path
+  path: "{CONFIG_FOLDER}/../tk-substancepainter"
+  version: v1.2.2

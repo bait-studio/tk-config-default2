@@ -48,5 +48,6 @@ settings.tk-desktop.project:
     - "*Houdini*"
     - "*Maya*"
     - "*Blender*"
+    - "*Substance*"
     name: 3D Tools
   location: "@engines.tk-desktop.location"

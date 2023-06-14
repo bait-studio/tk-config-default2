@@ -30,6 +30,8 @@ includes:
 - ./includes/settings/tk-blender.yml
 - ./includes/settings/tk-photoshopcc.yml
 - ./includes/settings/tk-aftereffects.yml
+- ./includes/settings/tk-substancedesigner.yml
+- ./includes/settings/tk-substancepainter.yml
 
 ################################################################################
 # configuration for all engines to load in an asset context
@@ -43,6 +45,8 @@ engines:
   tk-blender: "@settings.tk-blender.asset"
   tk-photoshopcc: "@settings.tk-photoshopcc.asset"
   tk-aftereffects: "@settings.tk-aftereffects.asset"
+  tk-substancedesigner: "@settings.tk-substancedesigner.asset"
+  tk-substancepainter: "@settings.tk-substancepainter.asset"
 
 ################################################################################
 # reference all of the common frameworks

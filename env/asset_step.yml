@@ -24,6 +24,8 @@ includes:
 - ./includes/settings/tk-blender.yml
 - ./includes/settings/tk-photoshopcc.yml
 - ./includes/settings/tk-aftereffects.yml
+- ./includes/settings/tk-substancedesigner.yml
+- ./includes/settings/tk-substancepainter.yml
 
 ################################################################################
 # configuration for all engines to load in an asset step context
@@ -39,6 +41,8 @@ engines:
   tk-blender: "@settings.tk-blender.asset_step"
   tk-photoshopcc: "@settings.tk-photoshopcc.asset_step"
   tk-aftereffects: "@settings.tk-aftereffects.asset_step"
+  tk-substancedesigner: "@settings.tk-substancedesigner.asset_step"
+  tk-substancepainter: "@settings.tk-substancepainter.asset_step"
 
 ################################################################################
 # reference all of the common frameworks
