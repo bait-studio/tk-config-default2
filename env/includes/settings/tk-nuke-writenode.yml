@@ -28,6 +28,8 @@ settings.tk-nuke-writenode.asset:
     settings:
       compression: "Zip (1 scanline)"
       datatype: "16 bit half"
+      metadata: "all metadata"
+      noprefix: "True"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
@@ -57,6 +59,8 @@ settings.tk-nuke-writenode.shot:
     settings:
       compression: "Zip (1 scanline)"
       datatype: "16 bit half"
+      metadata: "all metadata"
+      noprefix: "True"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
