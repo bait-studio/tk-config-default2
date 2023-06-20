@@ -31,6 +31,8 @@ keys:
         type: str
     Shot:
         type: str
+    Step:
+        type: str
     sg_asset_type:
         type: str
     Asset:
@@ -61,6 +63,18 @@ keys:
         alias: output
         type: str
         filter_by: alphanumeric
+    
+    # Represents the optional output name for frames written by the After Effects Publish Rendering Plugin
+    afx.comp:
+        alias: comp
+        type: str
+        filter_by: alphanumeric
+    afx.mov.ext:
+        alias: extension
+        type: str
+        choices:
+            mov: Quicktime Movie (.mov)
+            avi: Audio Video Interleaved (.avi)
 
     SEQ:
         type: sequence
@@ -99,6 +113,41 @@ keys:
             mb: Maya Binary (.mb)
         default: ma
         alias: extension
+    
+    #
+    # Substance Designer
+    #
+    substancedesigner.texture_extension:
+        type: str
+        alias: extension
+
+    substancedesigner.channel:
+        type: str
+        alias: channel
+
+    substancedesigner.package.name:
+        type: str
+        alias: name
+
+    substancedesigner.graph.name:
+        type: str
+
+    substancedesigner.extension:
+        type: str
+        choices:
+            sbs: Substance Design File (.sbs)
+        default: sbs
+        alias: extension
+    
+    #
+    # Substance Painter
+    #
+    substancepainter.texture_extension:
+        type: str
+        alias: extension
+
+    substancepainter.texture_name:
+        type: str
 
 
 
@@ -119,8 +168,8 @@ paths:
     #
     # These don't require the standard formatting (with definition and root_name) because they
     # will be set within each template that uses the alias.
-    shot_root: sequences/{Sequence}/{Shot}
-    asset_root: assets/{sg_asset_type}/{Asset}
+    shot_root: sequences/{Sequence}/{Shot}/{Step}
+    asset_root: assets/{sg_asset_type}/{Asset}/{Step}
     sequence_root: sequences/{Sequence}
 
 
@@ -155,6 +204,54 @@ paths:
     ##########################################################################################
     # Shot level paths
     #
+
+    #
+    # Photoshop
+    #
+
+    # The location of WIP files
+    photoshop_shot_work:
+        definition: '@shot_root/work/photoshop/{name}.v{version}.psd'
+    shot_work_area_photoshop:
+        definition: '@shot_root/work/photoshop'
+    # The location of backups of WIP files
+    photoshop_shot_snapshot:
+        definition: '@shot_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+    # The location of published files
+    shot_publish_area_photoshop:
+        definition: '@shot_root/publish/photoshop'
+    photoshop_shot_publish:
+        definition: '@shot_root/publish/photoshop/{name}.v{version}.psd'
+    # The location of the published images
+    photoshop_shot_png_publish:
+        definition: '@shot_root/publish/photoshop/{name}.v{version}.png'
+    photoshop_shot_jpg_publish:
+        definition: '@shot_root/publish/photoshop/{name}.v{version}.jpg'
+
+    #
+    # After Effects
+    #
+
+    # The location of WIP files
+    aftereffects_shot_work:
+        definition: '@shot_root/work/afx/{name}.v{version}.aep'
+    shot_work_area_aftereffects:
+        definition: '@shot_root/work/afx'
+    # The location of backups of WIP files
+    aftereffects_shot_snapshot:
+        definition: '@shot_root/work/afx/snapshots/{name}.v{version}.{timestamp}.aep'
+    # The location of published files
+    shot_publish_area_aftereffects:
+        definition: '@shot_root/publish/afx'
+    aftereffects_shot_publish:
+        definition: '@shot_root/publish/afx/{name}.v{version}.aep'
+    aftereffects_shot_render_pub_mono:
+        definition: '@shot_root/publish/elements/{name}/v{version}/{width}x{height}/{Shot}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
+    # The following template uses {afx.mov.ext} this is a special key, that will be only there
+    # in the beta to support different extensions on mac and windows, while using the same
+    # output module (Lossless with Alpha)
+    aftereffects_shot_render_movie:
+        definition: '@shot_root/review/{Shot}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
 
     #
     # Maya
@@ -257,9 +354,9 @@ paths:
 
     # export of shot asset data from hiero
     hiero_plate_path_exr:
-        definition: '@shot_root/editorial/plates/{Shot}_{track}_v{version}/{Shot}_{track}_v{version}.{SEQ}.exr'
+        definition: '@sequence_root/{Shot}/editorial/plates/{Shot}_{track}_v{version}/{Shot}_{track}_v{version}.{SEQ}.exr'
     hiero_plate_path_dpx:
-        definition: '@shot_root/editorial/plates/{Shot}_{track}_v{version}/{Shot}_{track}_v{version}.{SEQ}.dpx'
+        definition: '@sequence_root/{Shot}/editorial/plates/{Shot}_{track}_v{version}/{Shot}_{track}_v{version}.{SEQ}.dpx'
 
     #
     # Blender
@@ -285,7 +382,7 @@ paths:
     # The location of published session files
     blender_shot_publish:
         definition: '@shot_root/publish/blender/{name}.v{version}/{name}.v{version}.blend'
-    
+
 
     ##########################################################################################
     # Asset pipeline
@@ -411,6 +508,101 @@ paths:
     # Location of the published session files
     blender_asset_publish:
         definition: '@asset_publish_area_blender/{name}.v{version}.blend'
+
+    #
+    # Substance Designer
+    #
+
+    # asset
+    # define the location of the work area
+    asset_work_area_substancedesigner:
+        definition: '@asset_root/work/substancedesigner'
+        root_name: 'qnap'
+
+    # define the location of the publish area
+    asset_publish_area_substancedesigner:
+        definition: '@asset_root/publish/substancedesigner'
+        root_name: 'qnap'
+
+    # substancedesigner session snapshots
+    substancedesigner_asset_work:
+        definition: '@asset_work_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+        root_name: 'qnap'
+
+    # substancedesigner session snapshots
+    substancedesigner_asset_snapshot:
+        definition: '@asset_work_area_substancedesigner/snapshots/{substancedesigner.package.name}.v{version}.{timestamp}.{substancedesigner.extension}'
+        root_name: 'qnap'
+
+    # substancedesigner package
+    substancedesigner_asset_package_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+        root_name: 'qnap'
+
+    # substancedesigner SBSAR package
+    substancedesigner_asset_package_archive_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.sbsar'
+        root_name: 'qnap'
+
+    # substancedesigner package as a preset
+    substancedesigner_asset_package_mdl_publish:
+        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.mdl'
+        root_name: 'qnap'
+
+    # substancedesigner graph output textures
+    substancedesigner_asset_graph_textures_path_publish:
+        definition: '@asset_publish_area_substancedesigner/textures/{substancedesigner.package.name}/{substancedesigner.graph.name}/{Asset}_textures_v{version}'
+        root_name: 'qnap'
+
+    # substancedesigner graph as mdle
+    substancedesigner_asset_graph_mdle_path_publish:
+        definition: '@asset_publish_area_substancedesigner/textures/{substancedesigner.package.name}/{substancedesigner.graph.name}/{Asset}_textures_v{version}.mdle'
+        root_name: 'qnap'
+
+
+    #
+    # Substance Painter
+    #
+
+    # asset
+    # define the location of a work area
+    asset_work_area_substancepainter:
+        definition: '@asset_root/work/substancepainter'
+        root_name: 'qnap'
+    # define the location of a publish area
+    asset_publish_area_substancepainter:
+        definition: '@asset_root/publish/substancepainter'
+        root_name: 'qnap'
+
+    # The location of WIP files
+    substancepainter_asset_work:
+        definition: '@asset_work_area_substancepainter/{name}.v{version}.spp'
+        root_name: 'qnap'
+
+    # The location of backups of WIP files
+    substancepainter_asset_snapshot:
+        definition: '@asset_work_area_substancepainter/snapshots/{name}.v{version}.{timestamp}.spp'
+        root_name: 'qnap'
+
+    # The folder where the textures are exported for a project
+    substancepainter_asset_textures_path_export:
+        definition: '@asset_work_area_substancepainter/export'
+        root_name: 'qnap'
+
+    # The location of published substance painter files
+    substancepainter_asset_publish:
+        definition: '@asset_publish_area_substancepainter/{name}.v{version}.spp'
+        root_name: 'qnap'
+
+    # a texture folder publish
+    substancepainter_asset_textures_path_publish:
+        definition: '@asset_publish_area_substancepainter/textures/{Asset}_textures_v{version}'
+        root_name: 'qnap'
+
+    # a texture folder publish
+    substancepainter_asset_texture_path_publish:
+        definition: '@asset_publish_area_substancepainter/textures/{Asset}_{substancepainter.texture_name}_v{version}.{substancepainter.texture_extension}'
+        root_name: 'qnap'
 
 #
 # The strings section is similar to the paths section - but rather than defining paths
