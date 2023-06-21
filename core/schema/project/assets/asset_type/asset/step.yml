@@ -12,4 +12,5 @@
 type: "shotgun_step"
 
 # the shotgun field to use for the folder name
-name: "short_name"
+name: "code"
+# name: "short_name"
