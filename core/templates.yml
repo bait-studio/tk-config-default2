@@ -396,6 +396,53 @@ paths:
         definition: '@asset_root/publish/caches/{name}.v{version}.abc'
 
     #
+    # Photoshop
+    #
+
+    # The location of WIP files
+    photoshop_asset_work:
+        definition: '@asset_root/work/photoshop/{name}.v{version}.psd'
+    asset_work_area_photoshop:
+        definition: '@asset_root/work/photoshop'
+    # The location of backups of WIP files
+    photoshop_asset_snapshot:
+        definition: '@asset_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+    # The location of published files
+    asset_publish_area_photoshop:
+        definition: '@asset_root/publish/photoshop'
+    photoshop_asset_publish:
+        definition: '@asset_root/publish/photoshop/{name}.v{version}.psd'
+    # The location of the published images
+    photoshop_asset_png_publish:
+        definition: '@asset_root/publish/photoshop/{name}.v{version}.png'
+    photoshop_asset_jpg_publish:
+        definition: '@asset_root/publish/photoshop/{name}.v{version}.jpg'
+    #
+    # after effects
+    #
+
+    # The location of WIP files
+    aftereffects_asset_work:
+        definition: '@asset_root/work/afx/{name}.v{version}.aep'
+    asset_work_area_aftereffects:
+        definition: '@asset_root/work/afx'
+    # The location of backups of WIP files
+    aftereffects_asset_snapshot:
+        definition: '@asset_root/work/afx/snapshots/{name}.v{version}.{timestamp}.aep'
+    # The location of published files
+    asset_publish_area_aftereffects:
+        definition: '@asset_root/publish/afx'
+    aftereffects_asset_publish:
+        definition: '@asset_root/publish/afx/{name}.v{version}.aep'
+    aftereffects_asset_render_pub_mono:
+        definition: '@asset_root/publish/elements/{name}/v{version}/{width}x{height}/{Asset}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
+    # The following template uses {afx.mov.ext} this is a special key, that will be only there
+    # in the beta to support different extensions on mac and windows, while using the same
+    # output module (Lossless with Alpha)
+    aftereffects_asset_render_movie:
+        definition: '@asset_root/review/{Asset}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
+
+    #
     # Maya
     #
 
