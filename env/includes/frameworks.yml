@@ -26,7 +26,7 @@ frameworks:
       name: tk-framework-desktopserver
   tk-framework-qtwidgets_v2.x.x:
     location:
-      version: v2.10.2
+      version: v2.10.6
       type: app_store
       name: tk-framework-qtwidgets
   tk-framework-shotgunutils_v4.x.x:
@@ -36,7 +36,7 @@ frameworks:
       name: tk-framework-shotgunutils
   tk-framework-shotgunutils_v5.x.x:
     location:
-      version: v5.8.4
+      version: v5.8.6
       type: app_store
       name: tk-framework-shotgunutils
   tk-framework-widget_v0.2.x:
