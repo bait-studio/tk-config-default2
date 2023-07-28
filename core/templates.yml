@@ -211,22 +211,22 @@ paths:
 
     # The location of WIP files
     photoshop_shot_work:
-        definition: '@shot_root/work/photoshop/{name}.v{version}.psd'
+        definition: '@shot_root/work/photoshop/{Shot}_{name}.v{version}.psd'
     shot_work_area_photoshop:
         definition: '@shot_root/work/photoshop'
     # The location of backups of WIP files
     photoshop_shot_snapshot:
-        definition: '@shot_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+        definition: '@shot_root/work/photoshop/snapshots/{Shot}_{name}.v{version}.{timestamp}.psd'
     # The location of published files
     shot_publish_area_photoshop:
         definition: '@shot_root/publish/photoshop'
     photoshop_shot_publish:
-        definition: '@shot_root/publish/photoshop/{name}.v{version}.psd'
+        definition: '@shot_root/publish/photoshop/{Shot}_{name}.v{version}.psd'
     # The location of the published images
     photoshop_shot_png_publish:
-        definition: '@shot_root/publish/photoshop/{name}.v{version}.png'
+        definition: '@shot_root/publish/photoshop/{Shot}_{name}.v{version}.png'
     photoshop_shot_jpg_publish:
-        definition: '@shot_root/publish/photoshop/{name}.v{version}.jpg'
+        definition: '@shot_root/publish/photoshop/{Shot}_{name}.v{version}.jpg'
 
     #
     # After Effects
@@ -234,17 +234,17 @@ paths:
 
     # The location of WIP files
     aftereffects_shot_work:
-        definition: '@shot_root/work/afx/{name}.v{version}.aep'
+        definition: '@shot_root/work/afx/{Shot}_{name}.v{version}.aep'
     shot_work_area_aftereffects:
         definition: '@shot_root/work/afx'
     # The location of backups of WIP files
     aftereffects_shot_snapshot:
-        definition: '@shot_root/work/afx/snapshots/{name}.v{version}.{timestamp}.aep'
+        definition: '@shot_root/work/afx/snapshots/{Shot}_{name}.v{version}.{timestamp}.aep'
     # The location of published files
     shot_publish_area_aftereffects:
         definition: '@shot_root/publish/afx'
     aftereffects_shot_publish:
-        definition: '@shot_root/publish/afx/{name}.v{version}.aep'
+        definition: '@shot_root/publish/afx/{Shot}_{name}.v{version}.aep'
     aftereffects_shot_render_pub_mono:
         definition: '@shot_root/publish/elements/{name}/v{version}/{width}x{height}/{Shot}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
     # The following template uses {afx.mov.ext} this is a special key, that will be only there
@@ -265,13 +265,13 @@ paths:
         definition: '@shot_root/publish/maya'
     # The location of WIP files
     maya_shot_work:
-        definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
+        definition: '@shot_root/work/maya/{Shot}_{name}.v{version}.{maya_extension}'
     # The location of backups of WIP files
     maya_shot_snapshot:
-        definition: '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
+        definition: '@shot_root/work/maya/snapshots/{Shot}_{name}.v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_shot_publish:
-        definition: '@shot_root/publish/maya/{name}.v{version}.{maya_extension}'
+        definition: '@shot_root/publish/maya/{Shot}_{name}.v{version}.{maya_extension}'
 
 
     #
@@ -286,13 +286,13 @@ paths:
         definition: '@shot_root/publish/houdini'
     # The location of WIP files
     houdini_shot_work:
-        definition: '@shot_root/work/houdini/{name}.v{version}.hip'
+        definition: '@shot_root/work/houdini/{Shot}_{name}.v{version}.hip'
     # The location of backups of WIP files
     houdini_shot_snapshot:
-        definition: '@shot_root/work/houdini/snapshots/{name}.v{version}.{timestamp}.hip'
+        definition: '@shot_root/work/houdini/snapshots/{Shot}_{name}.v{version}.{timestamp}.hip'
     # The location of published houdini files
     houdini_shot_publish:
-        definition: '@shot_root/publish/houdini/{name}.v{version}.hip'
+        definition: '@shot_root/publish/houdini/{Shot}_{name}.v{version}.hip'
     # Alembic caches
     houdini_shot_work_alembic_cache:
         definition: '@shot_root/work/houdini/cache/alembic/{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.abc'
@@ -373,15 +373,15 @@ paths:
 
     # The location of WIP session files
     blender_shot_work:
-        definition: '@shot_root/work/blender/{name}.v{version}/{name}.v{version}.blend'
+        definition: '@shot_root/work/blender/{name}.v{version}/{Shot}_{name}.v{version}.blend'
 
     # The location of backups of WIP session files
     blender_shot_snapshot:
-        definition: '@shot_root/work/blender/snapshots/{name}.v{version}/{name}.v{version}.{timestamp}.blend'
+        definition: '@shot_root/work/blender/snapshots/{name}.v{version}/{Shot}_{name}.v{version}.{timestamp}.blend'
 
     # The location of published session files
     blender_shot_publish:
-        definition: '@shot_root/publish/blender/{name}.v{version}/{name}.v{version}.blend'
+        definition: '@shot_root/publish/blender/{name}.v{version}/{Shot}_{name}.v{version}.blend'
 
 
     ##########################################################################################
@@ -393,7 +393,7 @@ paths:
     #
 
     asset_alembic_cache:
-        definition: '@asset_root/publish/caches/{name}.v{version}.abc'
+        definition: '@asset_root/publish/caches/{Asset}_{name}.v{version}.abc'
 
     #
     # Photoshop
@@ -401,39 +401,39 @@ paths:
 
     # The location of WIP files
     photoshop_asset_work:
-        definition: '@asset_root/work/photoshop/{name}.v{version}.psd'
+        definition: '@asset_root/work/photoshop/{Asset}_{name}.v{version}.psd'
     asset_work_area_photoshop:
         definition: '@asset_root/work/photoshop'
     # The location of backups of WIP files
     photoshop_asset_snapshot:
-        definition: '@asset_root/work/photoshop/snapshots/{name}.v{version}.{timestamp}.psd'
+        definition: '@asset_root/work/photoshop/snapshots/{Asset}_{name}.v{version}.{timestamp}.psd'
     # The location of published files
     asset_publish_area_photoshop:
         definition: '@asset_root/publish/photoshop'
     photoshop_asset_publish:
-        definition: '@asset_root/publish/photoshop/{name}.v{version}.psd'
+        definition: '@asset_root/publish/photoshop/{Asset}_{name}.v{version}.psd'
     # The location of the published images
     photoshop_asset_png_publish:
-        definition: '@asset_root/publish/photoshop/{name}.v{version}.png'
+        definition: '@asset_root/publish/photoshop/{Asset}_{name}.v{version}.png'
     photoshop_asset_jpg_publish:
-        definition: '@asset_root/publish/photoshop/{name}.v{version}.jpg'
+        definition: '@asset_root/publish/photoshop/{Asset}_{name}.v{version}.jpg'
     #
     # after effects
     #
 
     # The location of WIP files
     aftereffects_asset_work:
-        definition: '@asset_root/work/afx/{name}.v{version}.aep'
+        definition: '@asset_root/work/afx/{Asset}_{name}.v{version}.aep'
     asset_work_area_aftereffects:
         definition: '@asset_root/work/afx'
     # The location of backups of WIP files
     aftereffects_asset_snapshot:
-        definition: '@asset_root/work/afx/snapshots/{name}.v{version}.{timestamp}.aep'
+        definition: '@asset_root/work/afx/snapshots/{Asset}_{name}.v{version}.{timestamp}.aep'
     # The location of published files
     asset_publish_area_aftereffects:
         definition: '@asset_root/publish/afx'
     aftereffects_asset_publish:
-        definition: '@asset_root/publish/afx/{name}.v{version}.aep'
+        definition: '@asset_root/publish/afx/{Asset}_{name}.v{version}.aep'
     aftereffects_asset_render_pub_mono:
         definition: '@asset_root/publish/elements/{name}/v{version}/{width}x{height}/{Asset}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
     # The following template uses {afx.mov.ext} this is a special key, that will be only there
@@ -454,13 +454,13 @@ paths:
         definition: '@asset_root/publish/maya'
     # The location of WIP files
     maya_asset_work:
-        definition: '@asset_root/work/maya/{name}.v{version}.{maya_extension}'
+        definition: '@asset_root/work/maya/{Asset}_{name}.v{version}.{maya_extension}'
     # The location of backups of WIP files
     maya_asset_snapshot:
-        definition: '@asset_root/work/maya/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
+        definition: '@asset_root/work/maya/snapshots/{Asset}_{name}.v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_asset_publish:
-        definition: '@asset_root/publish/maya/{name}.v{version}.{maya_extension}'
+        definition: '@asset_root/publish/maya/{Asset}_{name}.v{version}.{maya_extension}'
 
 
     #
@@ -475,13 +475,13 @@ paths:
         definition: '@asset_root/publish/houdini'
     # The location of WIP files
     houdini_asset_work:
-        definition: '@asset_root/work/houdini/{name}.v{version}.hip'
+        definition: '@asset_root/work/houdini/{Asset}_{name}.v{version}.hip'
     # The location of backups of WIP files
     houdini_asset_snapshot:
-        definition: '@asset_root/work/houdini/snapshots/{name}.v{version}.{timestamp}.hip'
+        definition: '@asset_root/work/houdini/snapshots/{Asset}_{name}.v{version}.{timestamp}.hip'
     # The location of published houdini files
     houdini_asset_publish:
-        definition: '@asset_root/publish/houdini/{name}.v{version}.hip'
+        definition: '@asset_root/publish/houdini/{Asset}_{name}.v{version}.hip'
     # Alembic caches
     houdini_asset_work_alembic_cache:
         definition: '@asset_root/work/houdini/cache/alembic/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.abc'
@@ -546,15 +546,15 @@ paths:
 
     # Location of WIP session files
     blender_asset_work:
-        definition: '@asset_work_area_blender/{name}.v{version}.blend'
+        definition: '@asset_work_area_blender/{Asset}_{name}.v{version}.blend'
 
     # Location of backups of WIP session files
     blender_asset_snapshot:
-        definition: '@asset_work_area_blender/snapshots/{name}.v{version}.{timestamp}.blend'
+        definition: '@asset_work_area_blender/snapshots/{Asset}_{name}.v{version}.{timestamp}.blend'
 
     # Location of the published session files
     blender_asset_publish:
-        definition: '@asset_publish_area_blender/{name}.v{version}.blend'
+        definition: '@asset_publish_area_blender/{Asset}_{name}.v{version}.blend'
 
     #
     # Substance Designer
@@ -573,27 +573,27 @@ paths:
 
     # substancedesigner session snapshots
     substancedesigner_asset_work:
-        definition: '@asset_work_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+        definition: '@asset_work_area_substancedesigner/{Asset}_{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
         root_name: 'qnap'
 
     # substancedesigner session snapshots
     substancedesigner_asset_snapshot:
-        definition: '@asset_work_area_substancedesigner/snapshots/{substancedesigner.package.name}.v{version}.{timestamp}.{substancedesigner.extension}'
+        definition: '@asset_work_area_substancedesigner/snapshots/{Asset}_{substancedesigner.package.name}.v{version}.{timestamp}.{substancedesigner.extension}'
         root_name: 'qnap'
 
     # substancedesigner package
     substancedesigner_asset_package_publish:
-        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
+        definition: '@asset_publish_area_substancedesigner/{Asset}_{substancedesigner.package.name}.v{version}.{substancedesigner.extension}'
         root_name: 'qnap'
 
     # substancedesigner SBSAR package
     substancedesigner_asset_package_archive_publish:
-        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.sbsar'
+        definition: '@asset_publish_area_substancedesigner/{Asset}_{substancedesigner.package.name}.v{version}.sbsar'
         root_name: 'qnap'
 
     # substancedesigner package as a preset
     substancedesigner_asset_package_mdl_publish:
-        definition: '@asset_publish_area_substancedesigner/{substancedesigner.package.name}.v{version}.mdl'
+        definition: '@asset_publish_area_substancedesigner/{Asset}_{substancedesigner.package.name}.v{version}.mdl'
         root_name: 'qnap'
 
     # substancedesigner graph output textures
@@ -623,12 +623,12 @@ paths:
 
     # The location of WIP files
     substancepainter_asset_work:
-        definition: '@asset_work_area_substancepainter/{name}.v{version}.spp'
+        definition: '@asset_work_area_substancepainter/{Asset}_{name}.v{version}.spp'
         root_name: 'qnap'
 
     # The location of backups of WIP files
     substancepainter_asset_snapshot:
-        definition: '@asset_work_area_substancepainter/snapshots/{name}.v{version}.{timestamp}.spp'
+        definition: '@asset_work_area_substancepainter/snapshots/{Asset}_{name}.v{version}.{timestamp}.spp'
         root_name: 'qnap'
 
     # The folder where the textures are exported for a project
@@ -638,7 +638,7 @@ paths:
 
     # The location of published substance painter files
     substancepainter_asset_publish:
-        definition: '@asset_publish_area_substancepainter/{name}.v{version}.spp'
+        definition: '@asset_publish_area_substancepainter/{Asset}_{name}.v{version}.spp'
         root_name: 'qnap'
 
     # a texture folder publish
