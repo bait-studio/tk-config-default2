@@ -246,7 +246,7 @@ paths:
     aftereffects_shot_publish:
         definition: '@shot_root/publish/afx/{Shot}_{name}.v{version}.aep'
     aftereffects_shot_render_pub_mono:
-        definition: '@shot_root/publish/elements/{name}/v{version}/{width}x{height}/{Shot}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
+        definition: '@shot_root/publish/elements/{name}/v{version}/{Shot}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
     # The following template uses {afx.mov.ext} this is a special key, that will be only there
     # in the beta to support different extensions on mac and windows, while using the same
     # output module (Lossless with Alpha)
@@ -299,17 +299,17 @@ paths:
 
     # Rendered images
     houdini_shot_render:
-        definition: '@shot_root/work/images/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/work/images/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.exr'
 
     # Additional mantra outputs
     houdini_shot_ifd:
-        definition: '@shot_root/work/ifds/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.ifd'
+        definition: '@shot_root/work/ifds/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.ifd'
 
     houdini_shot_dcm:
-        definition: '@shot_root/work/dcms/{name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.dcm'
+        definition: '@shot_root/work/dcms/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.dcm'
 
     houdini_shot_extra_plane:
-        definition: '@shot_root/work/images/{name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}/{Shot}_{name}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/work/images/{Shot}_{name}/{houdini.node}/{aov_name}/v{version}/{Shot}_{name}_v{version}.{SEQ}.exr'
 
     #
     # Nuke
@@ -435,7 +435,7 @@ paths:
     aftereffects_asset_publish:
         definition: '@asset_root/publish/afx/{Asset}_{name}.v{version}.aep'
     aftereffects_asset_render_pub_mono:
-        definition: '@asset_root/publish/elements/{name}/v{version}/{width}x{height}/{Asset}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
+        definition: '@asset_root/publish/elements/{name}/v{version}/{Asset}_{name}_{afx.comp}_v{version}.{SEQ}.tif'
     # The following template uses {afx.mov.ext} this is a special key, that will be only there
     # in the beta to support different extensions on mac and windows, while using the same
     # output module (Lossless with Alpha)
@@ -488,17 +488,17 @@ paths:
 
     # Rendered images
     houdini_asset_render:
-        definition: '@asset_root/work/images/{name}/{houdini.node}/v{version}/{width}x{height}/{Asset}_{name}_v{version}.{SEQ}.exr'
+        definition: '@asset_root/work/images/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.exr'
 
     # Additional mantra outputs
     houdini_asset_ifd:
-        definition: '@asset_root/work/ifds/{name}/{houdini.node}/v{version}/{width}x{height}/{Asset}_{name}_v{version}.{SEQ}.ifd'
+        definition: '@asset_root/work/ifds/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.ifd'
 
     houdini_asset_dcm:
-        definition: '@asset_root/work/dcms/{name}/{houdini.node}/v{version}/{width}x{height}/{Asset}_{name}_v{version}.{SEQ}.dcm'
+        definition: '@asset_root/work/dcms/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.dcm'
 
     houdini_asset_extra_plane:
-        definition: '@asset_root/work/images/{name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}/{Asset}_{name}_v{version}.{SEQ}.exr'
+        definition: '@asset_root/work/images/{name}/{houdini.node}/{aov_name}/v{version}/{Asset}_{name}_v{version}.{SEQ}.exr'
 
 
     #
@@ -513,9 +513,9 @@ paths:
         definition: '@asset_root/publish'
     # outputs from the Shotgun Write Node for assets
     nuke_asset_render:
-        definition: '@asset_root/work/images/{name}/v{version}/{width}x{height}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
+        definition: '@asset_root/work/images/{name}/v{version}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
     nuke_asset_render_pub:
-        definition: '@asset_root/publish/elements/{name}/v{version}/{width}x{height}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
+        definition: '@asset_root/publish/elements/{name}/v{version}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
     # review output
     nuke_asset_render_movie:
         definition: '@asset_root/review/{Asset}[_{name}]_{nuke.output}.v{version}.mov'
