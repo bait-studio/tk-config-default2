@@ -57,6 +57,7 @@ settings.tk-nuke-writenode.shot:
     proxy_publish_template: null
     proxy_render_template: null
     settings:
+      channels: "rgba"
       compression: "Zip (1 scanline)"
       datatype: "16 bit half"
       metadata: "all metadata"
