@@ -105,7 +105,7 @@ class BeforeAppLaunch(tank.Hook):
             hieroPathComponents = os.environ["HIERO_PLUGIN_PATH"].split(";")
 
             #Clear out the old pipeline path
-            hieroPathComponents = [x for x in hieroPathComponents if x != "K:\\production03\\tools\\nuke"]
+            hieroPathComponents = [x for x in hieroPathComponents if x != "\\baitqn\Media\Assets\tools\Hiero"]
 
             #Add the new custom hiero init path
             hieroInitDir = os.path.join(configVersionDir, "BaitNukeInit", "core")
