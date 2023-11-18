@@ -22,9 +22,8 @@ engines.tk-desktop2.location:
   name: tk-desktop2
   version: v1.5.1
 engines.tk-houdini.location:
-  type: app_store
-  name: tk-houdini
-  version: v1.8.5
+  type: path
+  path: "{CONFIG_FOLDER}/../tk-houdini"
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
