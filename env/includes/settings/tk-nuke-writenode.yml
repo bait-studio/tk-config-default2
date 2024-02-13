@@ -33,6 +33,21 @@ settings.tk-nuke-writenode.asset:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  - file_type: exr
+    name: EXR - ACES INTERCHANGE
+    publish_template: nuke_shot_render_pub_exr
+    render_template: nuke_shot_render_exr
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings:
+      channels: "rgba"
+      compression: "Zip (1 scanline)"
+      datatype: "16 bit half"
+      metadata: "all metadata"
+      colorspace: "scene_linear"
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: ['compression']
   - file_type: dpx
     name: DPX
     publish_template: nuke_shot_render_pub_dpx
@@ -61,7 +76,21 @@ settings.tk-nuke-writenode.shot:
       compression: "Zip (1 scanline)"
       datatype: "16 bit half"
       metadata: "all metadata"
-      noprefix: "True"
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: ['compression']
+  - file_type: exr
+    name: EXR - ACES INTERCHANGE
+    publish_template: nuke_shot_render_pub_exr
+    render_template: nuke_shot_render_exr
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings:
+      channels: "rgba"
+      compression: "PIZ Wavelet (32 scanlines)"
+      datatype: "16 bit half"
+      metadata: "all metadata"
+      colorspace: "aces_interchange"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
@@ -73,6 +102,7 @@ settings.tk-nuke-writenode.shot:
     proxy_render_template: null
     settings:
       datatype: "12 bit"
+      colorspace: "AlexaV3LogC"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['datatype']
