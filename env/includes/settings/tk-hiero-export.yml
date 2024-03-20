@@ -22,6 +22,7 @@ settings.tk-hiero-export:
   - {channel: dpx, name: DPX}
   - {channel: exr, name: EXR}
   - {channel: exr, name: EXR - ACES INTERCHANGE}
+  - {channel: exr, name: EXR - ACEScg}
   
   template_nuke_script_path: nuke_shot_work
 
