@@ -119,4 +119,8 @@ apps.tk-nuke-writenode.location:
   name: tk-nuke-writenode
   type: app_store
   version: v1.6.2
+apps.tk-shotgrid-launchreviewablefolder.location:
+  type: dev
+  path: "{CONFIG_FOLDER}/../tk-shotgrid-launchreviewablefolder"
+  version: v1.0.0
 frameworks: '@frameworks'

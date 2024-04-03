@@ -20,6 +20,7 @@ includes:
 - ./tk-shotgun-launchfolder.yml
 - ./tk-shotgun-launchpublish.yml
 - ./tk-shotgun-launchvredreview.yml
+- ./tk-shotgrid-launchreviewablefolder.yml
 
 ################################################################################
 
@@ -97,6 +98,7 @@ settings.tk-shotgun.shot_step:
 # version
 settings.tk-shotgun.version:
   apps:
+    tk-shotgrid-launchreviewablefolder: "@settings.tk-shotgrid-launchreviewablefolder"
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
     tk-shotgun-launchpublish: "@settings.tk-shotgun-launchpublish"
   location: "@engines.tk-shotgun.location"
