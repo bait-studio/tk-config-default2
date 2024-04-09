@@ -19,6 +19,7 @@ includes:
 settings.tk-nuke-writenode.asset:
   template_script_work: nuke_asset_work
   write_nodes:
+  ## Standard EXR
   - file_type: exr
     name: EXR
     publish_template: nuke_asset_render_pub
@@ -33,6 +34,7 @@ settings.tk-nuke-writenode.asset:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  ## ACES Interchange (ACES2065-1) EXR
   - file_type: exr
     name: EXR - ACES INTERCHANGE
     publish_template: nuke_shot_render_pub_exr
@@ -48,6 +50,7 @@ settings.tk-nuke-writenode.asset:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  ## ACEScg EXR
   - file_type: exr
     name: EXR - ACEScg
     publish_template: nuke_shot_render_pub_exr
@@ -63,6 +66,23 @@ settings.tk-nuke-writenode.asset:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  ## SLOG3 EXR
+  - file_type: exr
+    name: EXR - SLOG3
+    publish_template: nuke_shot_render_pub_exr
+    render_template: nuke_shot_render_exr
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings:
+      channels: "rgba"
+      compression: "PIZ Wavelet (32 scanlines)"
+      datatype: "16 bit half"
+      metadata: "all metadata"
+      colorspace: "SLog3"
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: ['compression']
+  ## Standard DPX
   - file_type: dpx
     name: DPX
     publish_template: nuke_shot_render_pub_dpx
@@ -80,6 +100,7 @@ settings.tk-nuke-writenode.asset:
 settings.tk-nuke-writenode.shot:
   template_script_work: nuke_shot_work
   write_nodes:
+  ## Standard EXR
   - file_type: exr
     name: EXR
     publish_template: nuke_shot_render_pub_exr
@@ -94,6 +115,7 @@ settings.tk-nuke-writenode.shot:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  ## ACES Interchange (ACES2065-1) EXR
   - file_type: exr
     name: EXR - ACES INTERCHANGE
     publish_template: nuke_shot_render_pub_exr
@@ -109,6 +131,7 @@ settings.tk-nuke-writenode.shot:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  ## ACEScg EXR
   - file_type: exr
     name: EXR - ACEScg
     publish_template: nuke_shot_render_pub_exr
@@ -124,6 +147,23 @@ settings.tk-nuke-writenode.shot:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']
+  ## SLOG3 EXR
+  - file_type: exr
+    name: EXR - SLOG3
+    publish_template: nuke_shot_render_pub_exr
+    render_template: nuke_shot_render_exr
+    proxy_publish_template: null
+    proxy_render_template: null
+    settings:
+      channels: "rgba"
+      compression: "PIZ Wavelet (32 scanlines)"
+      datatype: "16 bit half"
+      metadata: "all metadata"
+      colorspace: "SLog3"
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: ['compression']
+  ## Standard DPX
   - file_type: dpx
     name: DPX
     publish_template: nuke_shot_render_pub_dpx

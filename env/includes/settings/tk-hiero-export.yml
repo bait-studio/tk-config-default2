@@ -21,6 +21,7 @@ settings.tk-hiero-export:
   nuke_script_toolkit_write_nodes:
   - {channel: dpx, name: DPX}
   - {channel: exr, name: EXR}
+  - {channel: exr, name: EXR - SLOG3}
   - {channel: exr, name: EXR - ACES INTERCHANGE}
   - {channel: exr, name: EXR - ACEScg}
   
