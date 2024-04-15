@@ -75,7 +75,7 @@ settings.tk-nuke-writenode.asset:
     proxy_render_template: null
     settings:
       channels: "rgba"
-      compression: "PIZ Wavelet (32 scanlines)"
+      compression: "Zip (1 Scanline)"
       datatype: "16 bit half"
       metadata: "all metadata"
       colorspace: "SLog3"
@@ -156,7 +156,7 @@ settings.tk-nuke-writenode.shot:
     proxy_render_template: null
     settings:
       channels: "rgba"
-      compression: "PIZ Wavelet (32 scanlines)"
+      compression: "Zip (1 Scanline)"
       datatype: "16 bit half"
       metadata: "all metadata"
       colorspace: "SLog3"
