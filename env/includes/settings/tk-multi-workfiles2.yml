@@ -30,6 +30,10 @@ includes:
 # and these 'transit' areas can be project, shot, or sequence level.
 
 settings.tk-multi-workfiles2: &settings_tk-multi-workfiles2
+  my_tasks_filters:
+  - ['task_assignees', 'is', '{context.user}']
+  - [sg_status_list, is_not, 'dlvr']
+  - [sg_status_list, is_not, 'apr']
   entities:
   - caption: Assets
     entity_type: Asset
@@ -53,6 +57,10 @@ settings.tk-multi-workfiles2: &settings_tk-multi-workfiles2
 
 # launches at startup.
 settings.tk-multi-workfiles2.launch_at_startup:
+  my_tasks_filters:
+  - ['task_assignees', 'is', '{context.user}']
+  - [sg_status_list, is_not, 'dlvr']
+  - [sg_status_list, is_not, 'apr']
   launch_at_startup: true
   entities:
   - caption: Assets
@@ -247,6 +255,10 @@ settings.tk-multi-workfiles2.nuke.shot_step:
   template_publish_area: shot_publish_area_nuke
   template_work: nuke_shot_work
   template_work_area: shot_work_area_nuke
+  my_tasks_filters:
+  - ['task_assignees', 'is', '{context.user}']
+  - [sg_status_list, is_not, 'dlvr']
+  - [sg_status_list, is_not, 'apr']
   entities:
   - caption: Assets
     entity_type: Asset
