@@ -71,6 +71,7 @@ settings.tk-nuke-writenode.asset:
     proxy_render_template: null
     settings:
       datatype: "12 bit"
+      channels: "rgb"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['datatype']
@@ -133,6 +134,7 @@ settings.tk-nuke-writenode.shot:
     settings:
       datatype: "12 bit"
       colorspace: "AlexaV3LogC"
+      channels: "rgb"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['datatype']
