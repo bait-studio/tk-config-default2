@@ -27,6 +27,7 @@ settings.tk-nuke-writenode.asset:
     proxy_render_template: null
     settings:
       compression: "Zip (1 scanline)"
+      colorspace: "linear"
       datatype: "16 bit half"
       metadata: "all metadata"
       noprefix: "True"
@@ -107,6 +108,7 @@ settings.tk-nuke-writenode.shot:
       compression: "Zip (1 scanline)"
       datatype: "16 bit half"
       metadata: "all metadata"
+      colorspace: "linear"
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: ['compression']

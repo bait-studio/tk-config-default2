@@ -17,6 +17,7 @@ includes:
 - ./includes/frameworks.yml
 - ./includes/settings/tk-desktop.yml
 - ./includes/settings/tk-houdini.yml
+- ./includes/settings/tk-mari.yml
 - ./includes/settings/tk-maya.yml
 - ./includes/settings/tk-nuke.yml
 - ./includes/settings/tk-shell.yml
@@ -34,6 +35,7 @@ engines:
   tk-desktop: "@settings.tk-desktop.project"
   tk-hiero: "@settings.tk-nuke.hiero.project"
   tk-houdini: "@settings.tk-houdini.project"
+  tk-mari: "@settings.tk-mari.project"
   tk-maya: "@settings.tk-maya.project"
   tk-nuke: "@settings.tk-nuke.project"
   tk-nukestudio: "@settings.tk-nuke.nukestudio.project"

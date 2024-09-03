@@ -23,6 +23,7 @@ settings.tk-hiero-export:
   - {channel: exr, name: EXR}
   - {channel: exr, name: EXR - ACES INTERCHANGE}
   - {channel: exr, name: EXR - ACEScg}
+  - {channel: exr, name: EXR - SLog3}
   
   template_nuke_script_path: nuke_shot_work
 

@@ -21,12 +21,12 @@ frameworks:
       name: tk-framework-adminui
   tk-framework-desktopserver_v1.x.x:
     location:
-      version: v1.6.3
+      version: v1.7.2
       type: app_store
       name: tk-framework-desktopserver
   tk-framework-qtwidgets_v2.x.x:
     location:
-      version: v2.10.7
+      version: v2.12.3
       type: app_store
       name: tk-framework-qtwidgets
   tk-framework-shotgunutils_v4.4.x:
@@ -36,7 +36,7 @@ frameworks:
       name: tk-framework-shotgunutils
   tk-framework-shotgunutils_v5.x.x:
     location:
-      version: v5.8.6
+      version: v5.10.0
       type: app_store
       name: tk-framework-shotgunutils
   tk-framework-widget_v0.2.x:
@@ -46,17 +46,22 @@ frameworks:
       name: tk-framework-widget
   tk-framework-widget_v1.x.x:
     location:
-      version: v1.1.1
+      version: v1.2.0
       type: app_store
       name: tk-framework-widget
   tk-framework-desktopclient_v0.x.x:
     location:
-      version: v0.3.2
+      version: v0.3.3
       type: app_store
       name: tk-framework-desktopclient
   tk-framework-lmv_v0.x.x:
     location:
       version: v0.2.2
+      type: app_store
+      name: tk-framework-lmv
+  tk-framework-lmv_v1.x.x:
+    location:
+      version: v1.1.0
       type: app_store
       name: tk-framework-lmv
   tk-framework-adobe_v1.x.x:
@@ -70,3 +75,8 @@ frameworks:
       type: git
       path: https://github.com/ue4plugins/tk-framework-unrealqt.git
       version: v1.2.3
+  tk-framework-editorial_v2.x.x:
+    location:
+      version: v2.3.0
+      type: app_store
+      name: tk-framework-editorial

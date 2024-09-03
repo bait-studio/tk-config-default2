@@ -16,38 +16,42 @@
 engines.tk-desktop.location:
   type: app_store
   name: tk-desktop
-  version: v2.6.9
+  version: v2.7.3
 engines.tk-desktop2.location:
   type: app_store
   name: tk-desktop2
-  version: v1.5.1
+  version: v1.6.0
 engines.tk-houdini.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-houdini"
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
-  version: v0.11.6
+  version: v0.13.1
 engines.tk-nuke.location:
   type: app_store
   name: tk-nuke
-  version: v0.14.6
+  version: v0.15.1
+engines.tk-mari.location:
+  type: app_store
+  name: tk-mari
+  version: v1.4.1
 engines.tk-photoshopcc.location:
   type: app_store
   name: tk-photoshopcc
-  version: v1.9.5
+  version: v1.11.1
 engines.tk-aftereffects.location:
   type: app_store
   name: tk-aftereffects
-  version: v0.3.3
+  version: v0.4.2
 engines.tk-shell.location:
   type: app_store
   name: tk-shell
-  version: v0.9.2
+  version: v0.10.1
 engines.tk-shotgun.location:
   type: app_store
   name: tk-shotgun
-  version: v0.10.2
+  version: v0.11.0
 engines.tk-blender.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-blender"

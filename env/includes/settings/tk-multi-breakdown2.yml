@@ -24,3 +24,13 @@ settings.tk-multi-breakdown2.alias:
 settings.tk-multi-breakdown2.vred:
   hook_scene_operations: '{self}/tk-vred_scene_operations.py'
   location: "@apps.tk-multi-breakdown2.location"
+
+# Mari
+settings.tk-multi-breakdown2.mari:
+  hook_scene_operations: '{self}/tk-mari_scene_operations.py'
+  location: "@apps.tk-multi-breakdown2.location"
+
+# Nuke
+settings.tk-multi-breakdown2.nuke:
+  hook_scene_operations: '{self}/tk-nuke_scene_operations.py'
+  location: "@apps.tk-multi-breakdown2.location"
