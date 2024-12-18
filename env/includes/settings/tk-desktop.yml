@@ -52,5 +52,6 @@ settings.tk-desktop.project:
     - "*Maya*"
     - "*Blender*"
     - "*Substance*"
+    - "*Syntheyes*"
     name: 3D Tools
   location: "@engines.tk-desktop.location"
