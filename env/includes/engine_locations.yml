@@ -13,52 +13,77 @@
 
 ################################################################################
 
+# desktop
 engines.tk-desktop.location:
   type: app_store
   name: tk-desktop
   version: v2.7.3
+
+# dekstop2
 engines.tk-desktop2.location:
   type: app_store
   name: tk-desktop2
   version: v1.6.0
+
+# houdini
 engines.tk-houdini.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-houdini"
+
+# maya
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
   version: v0.13.1
+
+# nuke
 engines.tk-nuke.location:
   type: app_store
   name: tk-nuke
   version: v0.15.1
+
+# mari
 engines.tk-mari.location:
   type: app_store
   name: tk-mari
   version: v1.4.1
+
+# photoshop
 engines.tk-photoshopcc.location:
   type: app_store
   name: tk-photoshopcc
   version: v1.11.1
+
+# after-effects
 engines.tk-aftereffects.location:
   type: app_store
   name: tk-aftereffects
   version: v0.4.2
+
+# shell
 engines.tk-shell.location:
   type: app_store
   name: tk-shell
   version: v0.10.1
+
+# shotgun
 engines.tk-shotgun.location:
   type: app_store
   name: tk-shotgun
   version: v0.11.0
+
+# blender
 engines.tk-blender.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-blender"
+
+# substance-designer
 engines.tk-substancedesigner.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-substancedesigner"
   version: v1.0.0
+
+# substance-painter
 engines.tk-substancepainter.location:
   type: path
   path: "{CONFIG_FOLDER}/../tk-substancepainter"
