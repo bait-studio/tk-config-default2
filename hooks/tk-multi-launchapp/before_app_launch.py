@@ -74,6 +74,8 @@ class BeforeAppLaunch(tank.Hook):
         os.environ["BAIT_TASKS_DIR"] = os.path.join(configVersionDir, "BaitTasks")
         os.environ["BAIT_TASKS_PYTHON_DIR"] = os.path.join(configVersionDir, "BaitTasks", "python")
         os.environ["BAIT_TASKS_NUKESCRIPTS_DIR"] = os.path.join(configVersionDir, "BaitTasks", "nukescripts")
+        # TODO: Add environ var for path to reviewableScripts folder.
+        os.environ["CORE_REVIEWABLESCRIPTS_DIR"] = os.path.join("\\\\baitqn\\Core\\Pipeline\\assets", "reviewableScripts")
 
         #Customise app inits
         if engine_name == "tk-nuke":

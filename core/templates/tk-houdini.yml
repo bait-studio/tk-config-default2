@@ -1,0 +1,106 @@
+keys:
+    houdini.node:
+        alias: node
+        type: str
+    aov_name:
+        type: str
+
+
+paths:
+    ##########################################################################################
+    # Shot level paths
+    #
+
+    # define the location of a work area
+    shot_work_area_houdini:
+        definition: '@shot_step_root/work/houdini'
+    # define the location of a publish area
+    shot_publish_area_houdini:
+        definition: '@shot_step_root/publish/houdini'
+    # The location of WIP files
+    houdini_shot_work:
+        definition: '@shot_step_root/work/houdini/{Shot}_{name}.v{version}.hip'
+    # The location of backups of WIP files
+    houdini_shot_snapshot:
+        definition: '@shot_step_root/work/houdini/snapshots/{Shot}_{name}.v{version}.{timestamp}.hip'
+    # The location of published houdini files
+    houdini_shot_publish:
+        definition: '@shot_step_root/publish/houdini/{Shot}_{name}.v{version}.hip'
+    # Alembic caches
+    houdini_shot_work_alembic_cache:
+        definition: '@shot_step_root/work/houdini/cache/alembic/{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.abc'
+    # Fbx caches
+    houdini_shot_work_fbx_cache:
+        definition: '@shot_step_root/work/houdini/cache/fbx/{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.fbx'
+
+    # File work caches
+    houdini_shot_work_file_cache:
+        definition: "@shot_step_root/work/houdini/cache/bgeo/{name}/v{version}/{Shot}_{name}_v{version}.{SEQ}.bgeo"
+        root_name: "render"
+    # File publish caches
+    houdini_shot_publish_file_cache:
+        definition: "@shot_step_root/publish/houdini/cache/bgeo/{name}/v{version}/{Projectcode}_sc{Sequence}_{Shot}_{Step}_pub_{name}_v{version}.{SEQ}.bgeo"
+    
+    # Rendered images
+    houdini_shot_render:
+        definition: '@shot_step_root/work/images/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.exr'
+
+    # Additional mantra outputs
+    houdini_shot_ifd:
+        definition: '@shot_step_root/work/ifds/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.ifd'
+
+    houdini_shot_dcm:
+        definition: '@shot_step_root/work/dcms/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.dcm'
+
+    houdini_shot_extra_plane:
+        definition: '@shot_step_root/work/images/{Shot}_{name}/{houdini.node}/{aov_name}/v{version}/{Shot}_{name}_v{version}.{SEQ}.exr'
+
+
+    ##########################################################################################
+    # Asset pipeline
+
+    # define the location of a work area
+    asset_work_area_houdini:
+        definition: '@asset_root/work/houdini'
+    # define the location of a publish area
+    asset_publish_area_houdini:
+        definition: '@asset_root/publish/houdini'
+    # The location of WIP files
+    houdini_asset_work:
+        definition: '@asset_root/work/houdini/{Asset}_{name}.v{version}.hip'
+    # The location of backups of WIP files
+    houdini_asset_snapshot:
+        definition: '@asset_root/work/houdini/snapshots/{Asset}_{name}.v{version}.{timestamp}.hip'
+    # The location of published houdini files
+    houdini_asset_publish:
+        definition: '@asset_root/publish/houdini/{Asset}_{name}.v{version}.hip'
+    # Alembic caches
+    houdini_asset_work_alembic_cache:
+        definition: '@asset_root/work/houdini/cache/alembic/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.abc'
+    # Fbx caches
+    houdini_asset_work_fbx_cache:
+        definition: '@asset_root/work/houdini/cache/fbx/{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.fbx'
+
+    # File work caches
+    houdini_asset_work_file_cache:
+        definition: "@asset_root/work/houdini/cache/bgeo/{name}/v{version}/{Shot}_{name}_v{version}.{SEQ}.bgeo"
+        root_name: "render"
+    # File publish caches
+    houdini_asset_publish_file_cache:
+        definition: "@asset_root/publish/houdini/cache/bgeo/{name}/v{version}/{Projectcode}_sc{Sequence}_{Shot}_{Step}_pub_{name}_v{version}.{SEQ}.bgeo"
+    
+
+    # Rendered images
+    houdini_asset_render:
+        definition: '@asset_root/work/images/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.exr'
+
+    # Additional mantra outputs
+    houdini_asset_ifd:
+        definition: '@asset_root/work/ifds/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.ifd'
+
+    houdini_asset_dcm:
+        definition: '@asset_root/work/dcms/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.dcm'
+
+    houdini_asset_extra_plane:
+        definition: '@asset_root/work/images/{name}/{houdini.node}/{aov_name}/v{version}/{Asset}_{name}_v{version}.{SEQ}.exr'
+

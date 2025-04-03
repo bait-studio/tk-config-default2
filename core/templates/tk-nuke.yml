@@ -1,0 +1,123 @@
+keys:
+    Sequence:
+        type: str
+    Shot:
+        type: str
+    Step:
+        type: str
+    sg_asset_type:
+        type: str
+    Asset:
+        type: str
+    name:
+        type: str
+        filter_by: alphanumeric
+    iteration:
+        type: int
+    version:
+        type: int
+        format_spec: "03"
+    version_four:
+       type: int
+       format_spec: "04"
+       alias: version
+    timestamp:
+        type: str
+    width:
+        type: int
+    height:
+        type: int
+    segment_name:
+        type: str
+    # Represents the optional output name for frames written by the Shotgun Write Node
+    nuke.output:
+        alias: output
+        type: str
+        filter_by: alphanumeric
+
+
+paths:
+
+    # Common  path definitions to use as shorthand in order to avoid repetitive and verbose
+    # templates. This also makes it easy to change any of the common root paths and have the
+    # changes apply to all templates that use them.
+    #
+    # These don't require the standard formatting (with definition and root_name) because they
+    # will be set within each template that uses the alias.
+    shot_root: sequences/{Sequence}/{Shot}
+    shot_step_root: sequences/{Sequence}/{Shot}/{Step}
+    asset_root: assets/{sg_asset_type}/{Asset}/{Step}
+    sequence_root: sequences/{Sequence}
+
+
+    #
+    # Nuke - SHOT PATHS
+    #
+
+    # define the location of a work area
+    shot_work_area_nuke:
+        definition: '@shot_step_root/work/nuke'
+    # define the location of a publish area
+    shot_publish_area_nuke:
+        definition: '@shot_step_root/publish/nuke'
+    # The location of WIP script files
+    nuke_shot_work:
+        definition: '@shot_step_root/work/nuke/{Shot}[_{name}].v{version}.nk'
+    # The location of backups of WIP files
+    nuke_shot_snapshot:
+        definition: '@shot_step_root/work/nuke/snapshots/{Shot}[_{name}].v{version}.{timestamp}.nk'
+    # The location of published nuke script files
+    nuke_shot_publish:
+        definition: '@shot_step_root/publish/nuke/{Shot}[_{name}].v{version}.nk'
+
+    # write node outputs
+    nuke_shot_render_exr:
+        definition: '@shot_step_root/work/nuke/renders/{Shot}[_{name}]_v{version}/{Shot}[_{name}]_v{version}.{SEQ}.exr'
+    nuke_shot_render_pub_exr:
+        definition: '@shot_step_root/publish/nuke/renders/{Shot}[_{name}]_v{version}/{Shot}[_{name}]_v{version}.{SEQ}.exr'
+    nuke_shot_render_dpx:
+        definition: '@shot_step_root/work/nuke/renders/{Shot}[_{name}]_v{version}/{Shot}[_{name}]_v{version}.{SEQ}.dpx'
+    nuke_shot_render_pub_dpx:
+        definition: '@shot_step_root/publish/nuke/renders/{Shot}[_{name}]_v{version}/{Shot}[_{name}]_v{version}.{SEQ}.dpx'
+
+    # review output
+    shot_quicktime_quick:
+        definition: '@shot_step_root/review/quickdaily/{Shot}[_{name}]_{timestamp}.mov'
+    # review output - used when publishing web-reviewable from Nuke
+    nuke_shot_render_movie:
+        definition: '@shot_step_root/review/{Shot}[_{name}]_reviewable_v{version}.mov'
+
+
+    #
+    # Nuke - ASSET PATHS
+    #
+
+    # define the location of a work area
+    asset_work_area_nuke:
+        definition: '@asset_root/work/nuke'
+    # define the location of a publish area
+    asset_publish_area_nuke:
+        definition: '@asset_root/publish'
+    # outputs from the Shotgun Write Node for assets
+    nuke_asset_render_exr:
+        definition: '@asset_root/work/images/{name}/v{version}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
+    nuke_asset_render_pub_exr:
+        definition: '@asset_root/publish/elements/{name}/v{version}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.exr'
+    nuke_asset_render_dpx:
+        definition: '@asset_root/work/images/{name}/v{version}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.dpx'
+    nuke_asset_render_pub_dpx:
+        definition: '@asset_root/publish/elements/{name}/v{version}/{Asset}[_{name}]_{nuke.output}.v{version}.{SEQ}.dpx'
+    # review output
+    nuke_asset_render_movie:
+        definition: '@asset_root/review/{Asset}[_{name}]_{nuke.output}.v{version}.mov'
+    asset_quicktime_quick:
+        definition: '@asset_root/review/quickdaily/{Asset}[_{name}]_{iteration}.mov'
+    # The location of WIP script files
+    nuke_asset_work:
+        definition: '@asset_root/work/nuke/{Asset}[_{name}].v{version}.nk'
+    # The location of backups of WIP files
+    nuke_asset_snapshot:
+        definition: '@asset_root/work/nuke/snapshots/{Asset}[_{name}].v{version}.{timestamp}.nk'
+    # The location of published nuke script files
+    nuke_asset_publish:
+        definition: '@asset_root/publish/nuke/{Asset}[_{name}].v{version}.nk'
