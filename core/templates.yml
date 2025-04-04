@@ -19,7 +19,7 @@
 # Whenever an app or an engine refers to a location on disk, it is using an entry defined in
 # this file. For more information, see the Shotgun Pipeline Toolkit Documentation.
 
-inculdes:
+includes:
 - ./templates/tk-houdini.yml
 - ./templates/tk-nuke.yml
 
