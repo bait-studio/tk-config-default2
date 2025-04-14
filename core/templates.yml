@@ -219,7 +219,7 @@ paths:
     usd_asset_publish:
         definition: '@asset_root/publish/usd/{name}/v{version}/{Asset}_{Step}_{name}.v{version}.usd'
 
-    usd_shot_publish::
+    usd_shot_publish:
         definition: '@shot_step_root/publish/usd/{name}/v{version}/{Shot}_{Step}_{name}_v{version}.usd'
 
 

@@ -192,6 +192,12 @@ apps.tk-houdini-mantranode.location:
   name: tk-houdini-mantranode
   version: v0.6.0
 
+# houdini-usdrop
+apps.tk-houdini-usdrop.location:
+  type: dev
+  path: "{CONFIG_FOLDER}/../tk-houdini-usdrop"
+
+
 # ---- Nuke Apps
 
 # quick-review
