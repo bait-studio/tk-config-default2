@@ -570,3 +570,6 @@ strings:
 
     # define how new Mari projects should be named
     mari_asset_project_name: "{mari.project_name} - Asset {asset_name}, {task_name}"
+
+    deadline_asset_batch_name: "{Asset}_{name}_v{version} | {task_name} | {project} | {timestamp}"
+    deadline_shot_batch_name: "{Shot}_{name}_v{version} | {task_name} | {project} | {timestamp}"

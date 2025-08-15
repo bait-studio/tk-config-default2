@@ -8,7 +8,7 @@ keys:
 
 paths:
     ##########################################################################################
-    # Shot level paths
+    # Shot paths
     #
 
     # define the location of a work area
@@ -42,7 +42,7 @@ paths:
     
     # Rendered images
     houdini_shot_render:
-        definition: '@shot_step_root/work/images/{Shot}_{name}/{houdini.node}/v{version}/{Shot}_{name}_v{version}.{SEQ}.exr'
+        definition: '@shot_step_root/work/houdini/renders/{Shot}[_{name}]_v{version}/{Shot}[_{name}]_v{version}.{SEQ}.exr'
 
     # Additional mantra outputs
     houdini_shot_ifd:
@@ -90,7 +90,7 @@ paths:
 
     # Rendered images
     houdini_asset_render:
-        definition: '@asset_root/work/images/{name}/{houdini.node}/v{version}/{Asset}_{name}_v{version}.{SEQ}.exr'
+        definition: '@asset_root/work/houdini/render/{Asset}[_{name}]_v{version}/{Asset}[_{name}]_v{version}.{SEQ}.exr'
 
     # Additional mantra outputs
     houdini_asset_ifd:
